@@ -63,6 +63,11 @@ public class DIYArrayList<E> implements List<E> {
     }
 
     @Override
+    public Iterator<E> iterator() {
+        return new DIYListIterator();
+    }
+
+    @Override
     public ListIterator<E> listIterator() {
         return new DIYListIterator();
     }
@@ -135,11 +140,6 @@ public class DIYArrayList<E> implements List<E> {
 
     @Override
     public boolean contains(Object o) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override
-    public Iterator<E> iterator() {
         throw new UnsupportedOperationException();
     }
 
