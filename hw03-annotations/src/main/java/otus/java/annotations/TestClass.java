@@ -1,14 +1,14 @@
 package otus.java.annotations;
 
 public class TestClass {
-    @Before
-    public void oneBefore() {
-        System.out.println(String.format("One before. It happens before the test. Class hashCode = %d", this.hashCode()));
+    @Before(priority = 1)
+    public void firstBefore() {
+        System.out.println(String.format("The first before. It happens before the test. Class hashCode = %d", this.hashCode()));
     }
 
     @Before
-    public void anotherBefore() {
-        System.out.println(String.format("Another before. It happens before the test. Class hashCode = %d", this.hashCode()));
+    public void secondBefore() {
+        System.out.println(String.format("The second before. It happens before the test. Class hashCode = %d", this.hashCode()));
     }
 
     @Test

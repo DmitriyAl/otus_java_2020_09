@@ -1,5 +1,7 @@
 package otus.java.annotations;
 
+import otus.java.annotations.comparator.BeforeComparator;
+
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.List;
@@ -13,7 +15,8 @@ public class App {
         List<Method> testMethods
                 = Stream.of(methods).filter(m -> m.isAnnotationPresent(Test.class)).collect(Collectors.toList());
         List<Method> beforeMethods
-                = Stream.of(methods).filter(m -> m.isAnnotationPresent(Before.class)).collect(Collectors.toList());
+                = Stream.of(methods).filter(m -> m.isAnnotationPresent(Before.class))
+                .sorted(new BeforeComparator()).collect(Collectors.toList());
         List<Method> afterMethods
                 = Stream.of(methods).filter(m -> m.isAnnotationPresent(After.class)).collect(Collectors.toList());
         int successful = 0;
