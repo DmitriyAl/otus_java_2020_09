@@ -1,4 +1,4 @@
-package otus.java.annotations;
+package otus.java.annotations.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

@@ -1,6 +1,6 @@
 package otus.java.annotations.comparator;
 
-import otus.java.annotations.Before;
+import otus.java.annotations.annotation.Before;
 
 import java.lang.reflect.Method;
 import java.util.Comparator;

@@ -1,4 +1,8 @@
-package otus.java.annotations;
+package otus.java.annotations.test;
+
+import otus.java.annotations.annotation.After;
+import otus.java.annotations.annotation.Before;
+import otus.java.annotations.annotation.Test;
 
 public class TestClass {
     @Before(priority = 1)
@@ -12,19 +16,17 @@ public class TestClass {
     }
 
     @Test
-    public void firstTest() {
+    public void testClassFirstTest() {
         System.out.println(String.format("The first test which passes. Class hashCode = %d", this.hashCode()));
     }
 
     @Test
-    public void secondTest() throws Exception {
-        System.out.println(String.format("The second test which throws an Exception. " +
-                "Class hashCode = %d", this.hashCode()));
-        throw new Exception("Exception from second test");
+    public void testClassSecondTest() throws Exception {
+        throw new Exception(String.format("Exception from testClassSecondTest test. Class hashcode = %d", this.hashCode()));
     }
 
     @Test
-    public void thirdTest() {
+    public void testClassThirdTest() {
         System.out.println(String.format("The third test which passes. Class hashCode = %d", this.hashCode()));
     }
 
