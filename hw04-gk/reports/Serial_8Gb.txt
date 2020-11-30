@@ -448,6 +448,7 @@ GC name:MarkSweepCompact
 5182ms|MarkSweepCompact|end of major GC|Allocation Failure(5249 ms)
 5249ms|MarkSweepCompact|end of major GC|Allocation Failure(5230 ms)
 5230ms|MarkSweepCompact|end of major GC|Allocation Failure(5250 ms)
+Storage size is 229_881_216
 
 > Task :hw04-gk:Main.main() FAILED
 

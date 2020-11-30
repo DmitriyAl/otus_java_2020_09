@@ -195,6 +195,7 @@ Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
 	at otus.java.gk.GcDemo.addMemoryLeak(GcDemo.java:75)
 	at otus.java.gk.GcDemo.start(GcDemo.java:30)
 	at otus.java.gk.Main.main(Main.java:5)
+Storage size is 798_381_090
 
 > Task :hw04-gk:Main.main() FAILED
 

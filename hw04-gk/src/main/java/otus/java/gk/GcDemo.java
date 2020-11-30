@@ -17,11 +17,14 @@ public class GcDemo {
     private final int shift;
     private final int timeout;
     private long previousStart;
+    private int startIndex;
+    private List<UUID> storage;
 
     public GcDemo(int batchSize, int shift, int timeout) {
         this.batchSize = batchSize;
         this.shift = shift;
         this.timeout = timeout;
+        this.storage = new ArrayList<>();
     }
 
     public void start() throws InterruptedException {
@@ -49,7 +52,8 @@ public class GcDemo {
                     long startTime = info.getGcInfo().getStartTime();
                     long duration = info.getGcInfo().getDuration();
 
-                    System.out.println((startTime - previousStart) + "ms|"  + gcName + "|" + gcAction + "|" + gcCause + "(" + duration + " ms)");
+                    System.out.println((startTime - previousStart) + "ms|"  + gcName + "|" + gcAction + "|"
+                            + gcCause + "(" + duration + " ms)|" + startIndex + "|" + storage.size());
                     previousStart = startTime;
                 }
             };
@@ -58,9 +62,7 @@ public class GcDemo {
     }
 
     private void addMemoryLeak() throws InterruptedException {
-        int startIndex = 0;
         int threshold = Integer.MAX_VALUE;
-        List<UUID> storage = new ArrayList<>();
         boolean stop = false;
         while (!stop) {
             for (int i = 0; i < batchSize; i++) {

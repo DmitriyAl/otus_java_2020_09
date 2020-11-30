@@ -396,6 +396,7 @@ Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
 261ms|G1 Old Generation|end of major GC|G1 Evacuation Pause(236 ms)
 236ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(1 ms)
 1ms|G1 Old Generation|end of major GC|G1 Evacuation Pause(5 ms)
+Storage size is 29_587_579
 
 > Task :hw04-gk:Main.main() FAILED
 

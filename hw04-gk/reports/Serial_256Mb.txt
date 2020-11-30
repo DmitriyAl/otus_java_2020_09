@@ -83,6 +83,7 @@ Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
 	at otus.java.gk.Main.main(Main.java:5)
 198ms|MarkSweepCompact|end of major GC|Allocation Failure(147 ms)
 147ms|MarkSweepCompact|end of major GC|Allocation Failure(179 ms)
+Storage size is 6_153_400
 
 > Task :hw04-gk:Main.main() FAILED
 

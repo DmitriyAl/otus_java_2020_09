@@ -202,6 +202,7 @@ GC name:PS Scavenge
 1012ms|PS MarkSweep|end of major GC|Ergonomics(992 ms)
 992ms|PS MarkSweep|end of major GC|Ergonomics(992 ms)
 992ms|PS MarkSweep|end of major GC|Ergonomics(1015 ms)
+Storage size is 27_135_000
 
 > Task :hw04-gk:Main.main() FAILED
 

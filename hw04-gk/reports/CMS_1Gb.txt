@@ -327,6 +327,7 @@ OpenJDK 64-Bit Server VM warning: Option UseConcMarkSweepGC was deprecated in ve
 1067ms|ParNew|end of minor GC|Allocation Failure(840 ms)
 840ms|ConcurrentMarkSweep|end of major GC|Allocation Failure(749 ms)
 972ms|ParNew|end of minor GC|Allocation Failure(957 ms)
+Storage size is 25_825_000
 
 > Task :hw04-gk:Main.main() FAILED
 

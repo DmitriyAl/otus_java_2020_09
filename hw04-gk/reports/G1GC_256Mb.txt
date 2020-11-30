@@ -271,6 +271,7 @@ Exception in thread "RMI TCP Connection(idle)" java.lang.OutOfMemoryError: Java 
 0ms|G1 Old Generation|end of major GC|G1 Evacuation Pause(68 ms)
 68ms|G1 Old Generation|end of major GC|G1 Evacuation Pause(66 ms)
 66ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(0 ms)
+Storage size is 7_140_000
 
 > Task :hw04-gk:Main.main() FAILED
 
