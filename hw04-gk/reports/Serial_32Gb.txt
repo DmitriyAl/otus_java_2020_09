@@ -1,0 +1,135 @@
+10:36:43 PM: Executing task 'Main.main()'...
+
+> Task :buildSrc:compileJava UP-TO-DATE
+> Task :buildSrc:compileGroovy NO-SOURCE
+> Task :buildSrc:processResources NO-SOURCE
+> Task :buildSrc:classes UP-TO-DATE
+> Task :buildSrc:jar UP-TO-DATE
+> Task :buildSrc:assemble UP-TO-DATE
+> Task :buildSrc:compileTestJava NO-SOURCE
+> Task :buildSrc:compileTestGroovy NO-SOURCE
+> Task :buildSrc:processTestResources NO-SOURCE
+> Task :buildSrc:testClasses UP-TO-DATE
+> Task :buildSrc:test NO-SOURCE
+> Task :buildSrc:check UP-TO-DATE
+> Task :buildSrc:build UP-TO-DATE
+> Task :hw04-gk:compileJava UP-TO-DATE
+> Task :hw04-gk:processResources NO-SOURCE
+> Task :hw04-gk:classes UP-TO-DATE
+
+> Task :hw04-gk:Main.main()
+Starting pid: 15228@k324
+GC name:Copy
+GC name:MarkSweepCompact
+21247ms|Copy|end of minor GC|Allocation Failure(708 ms)
+20967ms|Copy|end of minor GC|Allocation Failure(1008 ms)
+21507ms|Copy|end of minor GC|Allocation Failure(973 ms)
+21204ms|Copy|end of minor GC|Allocation Failure(1021 ms)
+20485ms|Copy|end of minor GC|Allocation Failure(1111 ms)
+20647ms|Copy|end of minor GC|Allocation Failure(1129 ms)
+22465ms|Copy|end of minor GC|Allocation Failure(793 ms)
+19337ms|Copy|end of minor GC|Allocation Failure(1690 ms)
+23130ms|Copy|end of minor GC|Allocation Failure(1191 ms)
+22676ms|Copy|end of minor GC|Allocation Failure(1131 ms)
+19372ms|Copy|end of minor GC|Allocation Failure(1078 ms)
+18462ms|Copy|end of minor GC|Allocation Failure(1883 ms)
+23553ms|Copy|end of minor GC|Allocation Failure(1177 ms)
+22730ms|Copy|end of minor GC|Allocation Failure(1099 ms)
+22665ms|Copy|end of minor GC|Allocation Failure(1160 ms)
+22911ms|Copy|end of minor GC|Allocation Failure(1184 ms)
+16476ms|Copy|end of minor GC|Allocation Failure(2334 ms)
+24258ms|Copy|end of minor GC|Allocation Failure(1185 ms)
+22974ms|Copy|end of minor GC|Allocation Failure(1080 ms)
+22616ms|Copy|end of minor GC|Allocation Failure(1246 ms)
+22856ms|Copy|end of minor GC|Allocation Failure(1166 ms)
+22829ms|Copy|end of minor GC|Allocation Failure(1159 ms)
+22812ms|Copy|end of minor GC|Allocation Failure(1159 ms)
+22839ms|Copy|end of minor GC|Allocation Failure(1190 ms)
+13318ms|Copy|end of minor GC|Allocation Failure(3017 ms)
+25116ms|Copy|end of minor GC|Allocation Failure(0 ms)
+0ms|MarkSweepCompact|end of major GC|Allocation Failure(13328 ms)
+34944ms|Copy|end of minor GC|Allocation Failure(597 ms)
+21844ms|Copy|end of minor GC|Allocation Failure(824 ms)
+22475ms|Copy|end of minor GC|Allocation Failure(1105 ms)
+22725ms|Copy|end of minor GC|Allocation Failure(1073 ms)
+22668ms|Copy|end of minor GC|Allocation Failure(1080 ms)
+22707ms|Copy|end of minor GC|Allocation Failure(1077 ms)
+22245ms|Copy|end of minor GC|Allocation Failure(1073 ms)
+22710ms|Copy|end of minor GC|Allocation Failure(1078 ms)
+22720ms|Copy|end of minor GC|Allocation Failure(1065 ms)
+22759ms|Copy|end of minor GC|Allocation Failure(1069 ms)
+8332ms|Copy|end of minor GC|Allocation Failure(2915 ms)
+2915ms|MarkSweepCompact|end of major GC|Allocation Failure(13993 ms)
+19021ms|Copy|end of minor GC|Allocation Failure(4625 ms)
+4625ms|MarkSweepCompact|end of major GC|Allocation Failure(12447 ms)
+17204ms|Copy|end of minor GC|Allocation Failure(4701 ms)
+4701ms|MarkSweepCompact|end of major GC|Allocation Failure(16063 ms)
+41661ms|MarkSweepCompact|end of major GC|Allocation Failure(15095 ms)
+39388ms|MarkSweepCompact|end of major GC|Allocation Failure(15075 ms)
+38218ms|MarkSweepCompact|end of major GC|Allocation Failure(15135 ms)
+37228ms|MarkSweepCompact|end of major GC|Allocation Failure(18027 ms)
+38937ms|MarkSweepCompact|end of major GC|Allocation Failure(15615 ms)
+35668ms|MarkSweepCompact|end of major GC|Allocation Failure(15613 ms)
+34752ms|MarkSweepCompact|end of major GC|Allocation Failure(16002 ms)
+34280ms|MarkSweepCompact|end of major GC|Allocation Failure(17753 ms)
+35219ms|MarkSweepCompact|end of major GC|Allocation Failure(16160 ms)
+32821ms|MarkSweepCompact|end of major GC|Allocation Failure(16052 ms)
+32501ms|MarkSweepCompact|end of major GC|Allocation Failure(16575 ms)
+31901ms|MarkSweepCompact|end of major GC|Allocation Failure(16317 ms)
+30995ms|MarkSweepCompact|end of major GC|Allocation Failure(16540 ms)
+30364ms|MarkSweepCompact|end of major GC|Allocation Failure(16665 ms)
+29924ms|MarkSweepCompact|end of major GC|Allocation Failure(16621 ms)
+29527ms|MarkSweepCompact|end of major GC|Allocation Failure(18128 ms)
+30478ms|MarkSweepCompact|end of major GC|Allocation Failure(16957 ms)
+28692ms|MarkSweepCompact|end of major GC|Allocation Failure(16920 ms)
+27950ms|MarkSweepCompact|end of major GC|Allocation Failure(16883 ms)
+27632ms|MarkSweepCompact|end of major GC|Allocation Failure(17826 ms)
+28250ms|MarkSweepCompact|end of major GC|Allocation Failure(16917 ms)
+26949ms|MarkSweepCompact|end of major GC|Allocation Failure(16987 ms)
+26621ms|MarkSweepCompact|end of major GC|Allocation Failure(17096 ms)
+26253ms|MarkSweepCompact|end of major GC|Allocation Failure(17229 ms)
+26076ms|MarkSweepCompact|end of major GC|Allocation Failure(17749 ms)
+26313ms|MarkSweepCompact|end of major GC|Allocation Failure(17175 ms)
+25535ms|MarkSweepCompact|end of major GC|Allocation Failure(18252 ms)
+26209ms|MarkSweepCompact|end of major GC|Allocation Failure(18783 ms)
+26416ms|MarkSweepCompact|end of major GC|Allocation Failure(17405 ms)
+24818ms|MarkSweepCompact|end of major GC|Allocation Failure(17645 ms)
+24824ms|MarkSweepCompact|end of major GC|Allocation Failure(17382 ms)
+24317ms|MarkSweepCompact|end of major GC|Allocation Failure(17908 ms)
+24655ms|MarkSweepCompact|end of major GC|Allocation Failure(17490 ms)
+24015ms|MarkSweepCompact|end of major GC|Allocation Failure(17448 ms)
+23789ms|MarkSweepCompact|end of major GC|Allocation Failure(17695 ms)
+23832ms|MarkSweepCompact|end of major GC|Allocation Failure(17467 ms)
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3689)
+	at java.base/java.util.ArrayList.grow(ArrayList.java:237)
+	at java.base/java.util.ArrayList.grow(ArrayList.java:242)
+	at java.base/java.util.ArrayList.add(ArrayList.java:485)
+	at java.base/java.util.ArrayList.add(ArrayList.java:498)
+	at otus.java.gk.GcDemo.addMemoryLeak(GcDemo.java:75)
+	at otus.java.gk.GcDemo.start(GcDemo.java:30)
+	at otus.java.gk.Main.main(Main.java:5)
+19657ms|MarkSweepCompact|end of major GC|Allocation Failure(17760 ms)
+17760ms|MarkSweepCompact|end of major GC|Allocation Failure(21174 ms)
+Storage size is 798_381_090
+
+> Task :hw04-gk:Main.main() FAILED
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
+Use '--warning-mode all' to show the individual deprecation warnings.
+See https://docs.gradle.org/6.6.1/userguide/command_line_interface.html#sec:command_line_warnings
+2 actionable tasks: 1 executed, 1 up-to-date
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':hw04-gk:Main.main()'.
+> Process 'command 'C:/Program Files/JetBrains/IntelliJ IDEA 2019.3.3/jbr/bin/java.exe'' finished with non-zero exit value 1
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 33m 12s
+11:09:55 PM: Task execution finished 'Main.main()'.

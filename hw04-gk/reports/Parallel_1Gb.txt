@@ -1,0 +1,226 @@
+11:23:21 AM: Executing task 'Main.main()'...
+
+> Task :buildSrc:compileJava UP-TO-DATE
+> Task :buildSrc:compileGroovy NO-SOURCE
+> Task :buildSrc:processResources NO-SOURCE
+> Task :buildSrc:classes UP-TO-DATE
+> Task :buildSrc:jar UP-TO-DATE
+> Task :buildSrc:assemble UP-TO-DATE
+> Task :buildSrc:compileTestJava NO-SOURCE
+> Task :buildSrc:compileTestGroovy NO-SOURCE
+> Task :buildSrc:processTestResources NO-SOURCE
+> Task :buildSrc:testClasses UP-TO-DATE
+> Task :buildSrc:test NO-SOURCE
+> Task :buildSrc:check UP-TO-DATE
+> Task :buildSrc:build UP-TO-DATE
+> Task :hw04-gk:compileJava UP-TO-DATE
+> Task :hw04-gk:processResources NO-SOURCE
+> Task :hw04-gk:classes UP-TO-DATE
+
+> Task :hw04-gk:Main.main()
+Starting pid: 10968@k324
+GC name:PS MarkSweep
+GC name:PS Scavenge
+945ms|PS Scavenge|end of minor GC|Allocation Failure(9 ms)
+758ms|PS Scavenge|end of minor GC|Allocation Failure(16 ms)
+748ms|PS Scavenge|end of minor GC|Allocation Failure(24 ms)
+773ms|PS Scavenge|end of minor GC|Allocation Failure(28 ms)
+798ms|PS Scavenge|end of minor GC|Allocation Failure(25 ms)
+761ms|PS Scavenge|end of minor GC|Allocation Failure(29 ms)
+545ms|PS Scavenge|end of minor GC|Allocation Failure(23 ms)
+536ms|PS Scavenge|end of minor GC|Allocation Failure(26 ms)
+487ms|PS Scavenge|end of minor GC|Allocation Failure(36 ms)
+564ms|PS Scavenge|end of minor GC|Allocation Failure(33 ms)
+574ms|PS Scavenge|end of minor GC|Allocation Failure(40 ms)
+584ms|PS Scavenge|end of minor GC|Allocation Failure(72 ms)
+588ms|PS Scavenge|end of minor GC|Allocation Failure(71 ms)
+581ms|PS Scavenge|end of minor GC|Allocation Failure(68 ms)
+466ms|PS Scavenge|end of minor GC|Allocation Failure(34 ms)
+536ms|PS Scavenge|end of minor GC|Allocation Failure(41 ms)
+556ms|PS Scavenge|end of minor GC|Allocation Failure(68 ms)
+585ms|PS Scavenge|end of minor GC|Allocation Failure(59 ms)
+585ms|PS Scavenge|end of minor GC|Allocation Failure(49 ms)
+578ms|PS Scavenge|end of minor GC|Allocation Failure(62 ms)
+610ms|PS Scavenge|end of minor GC|Allocation Failure(57 ms)
+608ms|PS Scavenge|end of minor GC|Allocation Failure(72 ms)
+499ms|PS Scavenge|end of minor GC|Allocation Failure(46 ms)
+628ms|PS Scavenge|end of minor GC|Allocation Failure(57 ms)
+600ms|PS Scavenge|end of minor GC|Allocation Failure(64 ms)
+604ms|PS Scavenge|end of minor GC|Allocation Failure(67 ms)
+644ms|PS Scavenge|end of minor GC|Allocation Failure(74 ms)
+648ms|PS Scavenge|end of minor GC|Allocation Failure(66 ms)
+676ms|PS Scavenge|end of minor GC|Allocation Failure(76 ms)
+693ms|PS Scavenge|end of minor GC|Allocation Failure(84 ms)
+735ms|PS Scavenge|end of minor GC|Allocation Failure(81 ms)
+735ms|PS Scavenge|end of minor GC|Allocation Failure(86 ms)
+780ms|PS Scavenge|end of minor GC|Allocation Failure(69 ms)
+531ms|PS Scavenge|end of minor GC|Allocation Failure(79 ms)
+808ms|PS Scavenge|end of minor GC|Allocation Failure(83 ms)
+807ms|PS Scavenge|end of minor GC|Allocation Failure(99 ms)
+99ms|PS MarkSweep|end of major GC|Ergonomics(960 ms)
+1719ms|PS Scavenge|end of minor GC|Allocation Failure(52 ms)
+823ms|PS Scavenge|end of minor GC|Allocation Failure(82 ms)
+856ms|PS Scavenge|end of minor GC|Allocation Failure(82 ms)
+883ms|PS Scavenge|end of minor GC|Allocation Failure(73 ms)
+892ms|PS Scavenge|end of minor GC|Allocation Failure(86 ms)
+925ms|PS Scavenge|end of minor GC|Allocation Failure(83 ms)
+914ms|PS Scavenge|end of minor GC|Allocation Failure(84 ms)
+84ms|PS MarkSweep|end of major GC|Ergonomics(1004 ms)
+1858ms|PS MarkSweep|end of major GC|Ergonomics(710 ms)
+1568ms|PS MarkSweep|end of major GC|Ergonomics(724 ms)
+1534ms|PS MarkSweep|end of major GC|Ergonomics(732 ms)
+1140ms|PS MarkSweep|end of major GC|Ergonomics(788 ms)
+1256ms|PS Scavenge|end of minor GC|Allocation Failure(105 ms)
+105ms|PS MarkSweep|end of major GC|Ergonomics(777 ms)
+1219ms|PS Scavenge|end of minor GC|Allocation Failure(158 ms)
+158ms|PS MarkSweep|end of major GC|Ergonomics(829 ms)
+1288ms|PS MarkSweep|end of major GC|Ergonomics(816 ms)
+1205ms|PS MarkSweep|end of major GC|Ergonomics(808 ms)
+1191ms|PS MarkSweep|end of major GC|Ergonomics(824 ms)
+1179ms|PS MarkSweep|end of major GC|Ergonomics(823 ms)
+1153ms|PS MarkSweep|end of major GC|Ergonomics(837 ms)
+1147ms|PS MarkSweep|end of major GC|Ergonomics(844 ms)
+1135ms|PS MarkSweep|end of major GC|Ergonomics(853 ms)
+1123ms|PS MarkSweep|end of major GC|Ergonomics(874 ms)
+1126ms|PS MarkSweep|end of major GC|Ergonomics(919 ms)
+1154ms|PS MarkSweep|end of major GC|Ergonomics(866 ms)
+1089ms|PS MarkSweep|end of major GC|Ergonomics(865 ms)
+1071ms|PS MarkSweep|end of major GC|Ergonomics(880 ms)
+1074ms|PS MarkSweep|end of major GC|Ergonomics(878 ms)
+1056ms|PS MarkSweep|end of major GC|Ergonomics(881 ms)
+1051ms|PS MarkSweep|end of major GC|Ergonomics(878 ms)
+1033ms|PS MarkSweep|end of major GC|Ergonomics(897 ms)
+1045ms|PS MarkSweep|end of major GC|Ergonomics(893 ms)
+1031ms|PS MarkSweep|end of major GC|Ergonomics(902 ms)
+1034ms|PS MarkSweep|end of major GC|Ergonomics(900 ms)
+1018ms|PS MarkSweep|end of major GC|Ergonomics(907 ms)
+1012ms|PS MarkSweep|end of major GC|Ergonomics(992 ms)
+1094ms|PS MarkSweep|end of major GC|Ergonomics(915 ms)
+1013ms|PS MarkSweep|end of major GC|Ergonomics(926 ms)
+1017ms|PS MarkSweep|end of major GC|Ergonomics(908 ms)
+992ms|PS MarkSweep|end of major GC|Ergonomics(914 ms)
+992ms|PS MarkSweep|end of major GC|Ergonomics(930 ms)
+1003ms|PS MarkSweep|end of major GC|Ergonomics(915 ms)
+984ms|PS MarkSweep|end of major GC|Ergonomics(929 ms)
+994ms|PS MarkSweep|end of major GC|Ergonomics(917 ms)
+977ms|PS MarkSweep|end of major GC|Ergonomics(921 ms)
+977ms|PS MarkSweep|end of major GC|Ergonomics(917 ms)
+969ms|PS MarkSweep|end of major GC|Ergonomics(898 ms)
+947ms|PS MarkSweep|end of major GC|Ergonomics(931 ms)
+978ms|PS MarkSweep|end of major GC|Ergonomics(924 ms)
+969ms|PS MarkSweep|end of major GC|Ergonomics(918 ms)
+960ms|PS MarkSweep|end of major GC|Ergonomics(939 ms)
+979ms|PS MarkSweep|end of major GC|Ergonomics(1112 ms)
+1147ms|PS MarkSweep|end of major GC|Ergonomics(936 ms)
+969ms|PS MarkSweep|end of major GC|Ergonomics(977 ms)
+1007ms|PS MarkSweep|end of major GC|Ergonomics(1004 ms)
+1033ms|PS MarkSweep|end of major GC|Ergonomics(1019 ms)
+1046ms|PS MarkSweep|end of major GC|Ergonomics(1011 ms)
+1036ms|PS MarkSweep|end of major GC|Ergonomics(1000 ms)
+1024ms|PS MarkSweep|end of major GC|Ergonomics(994 ms)
+1017ms|PS MarkSweep|end of major GC|Ergonomics(1009 ms)
+1030ms|PS MarkSweep|end of major GC|Ergonomics(991 ms)
+1010ms|PS MarkSweep|end of major GC|Ergonomics(1055 ms)
+1073ms|PS MarkSweep|end of major GC|Ergonomics(1000 ms)
+1018ms|PS MarkSweep|end of major GC|Ergonomics(1006 ms)
+1023ms|PS MarkSweep|end of major GC|Ergonomics(996 ms)
+1011ms|PS MarkSweep|end of major GC|Ergonomics(1003 ms)
+1016ms|PS MarkSweep|end of major GC|Ergonomics(1003 ms)
+1016ms|PS MarkSweep|end of major GC|Ergonomics(990 ms)
+1002ms|PS MarkSweep|end of major GC|Ergonomics(986 ms)
+998ms|PS MarkSweep|end of major GC|Ergonomics(972 ms)
+983ms|PS MarkSweep|end of major GC|Ergonomics(1010 ms)
+1020ms|PS MarkSweep|end of major GC|Ergonomics(1000 ms)
+1009ms|PS MarkSweep|end of major GC|Ergonomics(1005 ms)
+1014ms|PS MarkSweep|end of major GC|Ergonomics(1007 ms)
+1015ms|PS MarkSweep|end of major GC|Ergonomics(1191 ms)
+1199ms|PS MarkSweep|end of major GC|Ergonomics(1200 ms)
+1208ms|PS MarkSweep|end of major GC|Ergonomics(1203 ms)
+1210ms|PS MarkSweep|end of major GC|Ergonomics(1172 ms)
+1179ms|PS MarkSweep|end of major GC|Ergonomics(1167 ms)
+1173ms|PS MarkSweep|end of major GC|Ergonomics(1180 ms)
+1185ms|PS MarkSweep|end of major GC|Ergonomics(1166 ms)
+1172ms|PS MarkSweep|end of major GC|Ergonomics(1138 ms)
+1143ms|PS MarkSweep|end of major GC|Ergonomics(1013 ms)
+1017ms|PS MarkSweep|end of major GC|Ergonomics(1025 ms)
+1029ms|PS MarkSweep|end of major GC|Ergonomics(1012 ms)
+1016ms|PS MarkSweep|end of major GC|Ergonomics(1138 ms)
+1142ms|PS MarkSweep|end of major GC|Ergonomics(1104 ms)
+1108ms|PS MarkSweep|end of major GC|Ergonomics(1095 ms)
+1098ms|PS MarkSweep|end of major GC|Ergonomics(998 ms)
+1001ms|PS MarkSweep|end of major GC|Ergonomics(1095 ms)
+1098ms|PS MarkSweep|end of major GC|Ergonomics(1012 ms)
+1015ms|PS MarkSweep|end of major GC|Ergonomics(1003 ms)
+1005ms|PS MarkSweep|end of major GC|Ergonomics(1019 ms)
+1020ms|PS MarkSweep|end of major GC|Ergonomics(1048 ms)
+1050ms|PS MarkSweep|end of major GC|Ergonomics(1197 ms)
+1200ms|PS MarkSweep|end of major GC|Ergonomics(966 ms)
+968ms|PS MarkSweep|end of major GC|Ergonomics(993 ms)
+995ms|PS MarkSweep|end of major GC|Ergonomics(998 ms)
+1000ms|PS MarkSweep|end of major GC|Ergonomics(989 ms)
+991ms|PS MarkSweep|end of major GC|Ergonomics(1012 ms)
+1014ms|PS MarkSweep|end of major GC|Ergonomics(1008 ms)
+1010ms|PS MarkSweep|end of major GC|Ergonomics(989 ms)
+991ms|PS MarkSweep|end of major GC|Ergonomics(1004 ms)
+1006ms|PS MarkSweep|end of major GC|Ergonomics(1011 ms)
+1013ms|PS MarkSweep|end of major GC|Ergonomics(1003 ms)
+1005ms|PS MarkSweep|end of major GC|Ergonomics(996 ms)
+997ms|PS MarkSweep|end of major GC|Ergonomics(1009 ms)
+1010ms|PS MarkSweep|end of major GC|Ergonomics(1021 ms)
+1022ms|PS MarkSweep|end of major GC|Ergonomics(1001 ms)
+1002ms|PS MarkSweep|end of major GC|Ergonomics(1015 ms)
+1016ms|PS MarkSweep|end of major GC|Ergonomics(999 ms)
+1000ms|PS MarkSweep|end of major GC|Ergonomics(1015 ms)
+1016ms|PS MarkSweep|end of major GC|Ergonomics(1004 ms)
+1005ms|PS MarkSweep|end of major GC|Ergonomics(1020 ms)
+1021ms|PS MarkSweep|end of major GC|Ergonomics(1009 ms)
+1010ms|PS MarkSweep|end of major GC|Ergonomics(998 ms)
+999ms|PS MarkSweep|end of major GC|Ergonomics(1014 ms)
+1015ms|PS MarkSweep|end of major GC|Ergonomics(1030 ms)
+1031ms|PS MarkSweep|end of major GC|Ergonomics(1028 ms)
+1029ms|PS MarkSweep|end of major GC|Ergonomics(1000 ms)
+1001ms|PS MarkSweep|end of major GC|Ergonomics(1002 ms)
+1002ms|PS MarkSweep|end of major GC|Ergonomics(1029 ms)
+1029ms|PS MarkSweep|end of major GC|Ergonomics(1004 ms)
+1005ms|PS MarkSweep|end of major GC|Ergonomics(989 ms)
+990ms|PS MarkSweep|end of major GC|Ergonomics(1000 ms)
+1001ms|PS MarkSweep|end of major GC|Ergonomics(1012 ms)
+1013ms|PS MarkSweep|end of major GC|Ergonomics(1023 ms)
+1023ms|PS MarkSweep|end of major GC|Ergonomics(1010 ms)
+1011ms|PS MarkSweep|end of major GC|Ergonomics(992 ms)
+992ms|PS MarkSweep|end of major GC|Ergonomics(979 ms)
+979ms|PS MarkSweep|end of major GC|Ergonomics(1006 ms)
+1006ms|PS MarkSweep|end of major GC|Ergonomics(988 ms)
+988ms|PS MarkSweep|end of major GC|Ergonomics(997 ms)
+998ms|PS MarkSweep|end of major GC|Ergonomics(997 ms)
+997ms|PS MarkSweep|end of major GC|Ergonomics(1002 ms)
+1002ms|PS MarkSweep|end of major GC|Ergonomics(1003 ms)
+1004ms|PS MarkSweep|end of major GC|Ergonomics(1004 ms)
+1005ms|PS MarkSweep|end of major GC|Ergonomics(1015 ms)
+1016ms|PS MarkSweep|end of major GC|Ergonomics(1001 ms)
+1001ms|PS MarkSweep|end of major GC|Ergonomics(1011 ms)
+1012ms|PS MarkSweep|end of major GC|Ergonomics(992 ms)
+992ms|PS MarkSweep|end of major GC|Ergonomics(992 ms)
+992ms|PS MarkSweep|end of major GC|Ergonomics(1015 ms)
+Storage size is 27_135_000
+
+> Task :hw04-gk:Main.main() FAILED
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
+Use '--warning-mode all' to show the individual deprecation warnings.
+See https://docs.gradle.org/6.6.1/userguide/command_line_interface.html#sec:command_line_warnings
+2 actionable tasks: 1 executed, 1 up-to-date
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':hw04-gk:Main.main()'.
+> Build cancelled while executing task ':hw04-gk:Main.main()'
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 3m 54s
+11:27:16 AM: Task execution finished 'Main.main()'.
