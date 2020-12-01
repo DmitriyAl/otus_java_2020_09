@@ -6,23 +6,31 @@ import otus.java.todo.Message;
 import otus.java.todo.MessagePair;
 import otus.java.todo.MessageStorage;
 import otus.java.todo.ObjectForMessage;
+import otus.java.todo.exception.EvenSecondsException;
 import otus.java.todo.listener.StoringMessageListener;
 import otus.java.todo.processor.ExceptionProcessor;
 import otus.java.todo.processor.Processor;
 import otus.java.todo.processor.ReplaceProcessor;
 
+import java.time.LocalDateTime;
 import java.util.Collections;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
 public class TestScenarios {
     @Test
     @DisplayName("Тестируем выбрасывание исключения в четное количество секунд")
     public void evenSeconds() {
-        var message = new Message.Builder().field9("field9").build();
-        var complexProcessor = new ComplexProcessor(Collections.singletonList(new ExceptionProcessor()), this::handleEvenSecondsException);
-        complexProcessor.handle(message);
+        var originalMessage = new Message.Builder().field9("field9").build();
+        LocalDateTime evenDateTime = LocalDateTime.of(2020, 12, 1, 0, 0, 0);
+        ExceptionProcessor evenSecondsProcessor = new ExceptionProcessor(() -> evenDateTime);
+        assertThatExceptionOfType(EvenSecondsException.class).isThrownBy(() -> evenSecondsProcessor.process(originalMessage));
+        LocalDateTime oddDateTime = LocalDateTime.of(2020, 12, 1, 0, 0, 1);
+        ExceptionProcessor oddSecondsProcessor = new ExceptionProcessor(() -> oddDateTime);
+        Message processedMessage = oddSecondsProcessor.process(originalMessage);
+        assertThat(processedMessage).isEqualTo(processedMessage);
     }
 
     private void handleEvenSecondsException(Exception exception) {
