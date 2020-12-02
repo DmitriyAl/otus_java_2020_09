@@ -1,0 +1,219 @@
+6:06:27 PM: Executing task 'Main.main()'...
+
+> Task :buildSrc:compileJava UP-TO-DATE
+> Task :buildSrc:compileGroovy NO-SOURCE
+> Task :buildSrc:processResources NO-SOURCE
+> Task :buildSrc:classes UP-TO-DATE
+> Task :buildSrc:jar UP-TO-DATE
+> Task :buildSrc:assemble UP-TO-DATE
+> Task :buildSrc:compileTestJava NO-SOURCE
+> Task :buildSrc:compileTestGroovy NO-SOURCE
+> Task :buildSrc:processTestResources NO-SOURCE
+> Task :buildSrc:testClasses UP-TO-DATE
+> Task :buildSrc:test NO-SOURCE
+> Task :buildSrc:check UP-TO-DATE
+> Task :buildSrc:build UP-TO-DATE
+> Task :hw04-gk:compileJava UP-TO-DATE
+> Task :hw04-gk:processResources NO-SOURCE
+> Task :hw04-gk:classes UP-TO-DATE
+
+> Task :hw04-gk:Main.main()
+Starting pid: 1444@k324
+GC name:G1 Young Generation
+GC name:G1 Old Generation
+4648ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(73 ms)
+4030ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(83 ms)
+3909ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(111 ms)
+3916ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(92 ms)
+3851ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(78 ms)
+3899ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(79 ms)
+3845ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(67 ms)
+3947ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(101 ms)
+3866ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(72 ms)
+3824ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(65 ms)
+3780ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(60 ms)
+3801ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(59 ms)
+3956ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(73 ms)
+3838ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(66 ms)
+3865ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(60 ms)
+4759ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(70 ms)
+7329ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(137 ms)
+3484ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(113 ms)
+5434ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(56 ms)
+5804ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(77 ms)
+6563ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(92 ms)
+7526ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(109 ms)
+6361ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(148 ms)
+6746ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(124 ms)
+9598ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(133 ms)
+9955ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(144 ms)
+11354ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(166 ms)
+10279ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(159 ms)
+6465ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(183 ms)
+14554ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(145 ms)
+10976ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(170 ms)
+14941ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(162 ms)
+10366ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(180 ms)
+15381ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(157 ms)
+10415ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(259 ms)
+15800ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(171 ms)
+10268ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(194 ms)
+17391ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(178 ms)
+11656ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(209 ms)
+17616ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(182 ms)
+10594ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(208 ms)
+20861ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(232 ms)
+7790ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(197 ms)
+5066ms|G1 Young Generation|end of minor GC|G1 Humongous Allocation(67 ms)
+9151ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(130 ms)
+8074ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(117 ms)
+9089ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(127 ms)
+9789ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(137 ms)
+10379ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(148 ms)
+11018ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(157 ms)
+11698ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(167 ms)
+12097ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(175 ms)
+12404ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(179 ms)
+12489ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(184 ms)
+12595ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(186 ms)
+12634ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(187 ms)
+12937ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(190 ms)
+12918ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(191 ms)
+13081ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(193 ms)
+8685ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(225 ms)
+16261ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(164 ms)
+11369ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(181 ms)
+13574ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(151 ms)
+11622ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(182 ms)
+8230ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(157 ms)
+12879ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(128 ms)
+13034ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(176 ms)
+2943ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(113 ms)
+15573ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(134 ms)
+13459ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(169 ms)
+9119ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(181 ms)
+15029ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(149 ms)
+12569ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(181 ms)
+11837ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(194 ms)
+13355ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(188 ms)
+9450ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(162 ms)
+15167ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(154 ms)
+12947ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(188 ms)
+10510ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(200 ms)
+13580ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(197 ms)
+12241ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(194 ms)
+12442ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(263 ms)
+4787ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(154 ms)
+4884ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(56 ms)
+4667ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(70 ms)
+4412ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(68 ms)
+4183ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(68 ms)
+10307ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(111 ms)
+8917ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(133 ms)
+10435ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(146 ms)
+10032ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(149 ms)
+10586ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(152 ms)
+10448ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(149 ms)
+10064ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(155 ms)
+9524ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(142 ms)
+9190ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(137 ms)
+8779ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(137 ms)
+8241ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(126 ms)
+7993ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(120 ms)
+7474ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(119 ms)
+7186ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(108 ms)
+6744ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(104 ms)
+6445ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(98 ms)
+6108ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(93 ms)
+5770ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(92 ms)
+5392ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(83 ms)
+5200ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(80 ms)
+4953ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(75 ms)
+4698ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(73 ms)
+4392ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(76 ms)
+4137ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(66 ms)
+4009ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(62 ms)
+3834ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(60 ms)
+3887ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(59 ms)
+3927ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(58 ms)
+3882ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(61 ms)
+3833ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(59 ms)
+3894ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(58 ms)
+3950ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(59 ms)
+3884ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(59 ms)
+3874ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(58 ms)
+3879ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(61 ms)
+3830ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(59 ms)
+3877ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(59 ms)
+3922ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(59 ms)
+3886ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(58 ms)
+3890ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(58 ms)
+3939ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(61 ms)
+3861ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(59 ms)
+3891ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(59 ms)
+3943ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(60 ms)
+3908ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(59 ms)
+3907ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(59 ms)
+3910ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(67 ms)
+3986ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(60 ms)
+3880ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(58 ms)
+3927ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(58 ms)
+3893ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(58 ms)
+3886ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(58 ms)
+3938ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(59 ms)
+3883ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(61 ms)
+3839ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(60 ms)
+3837ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(59 ms)
+3872ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(58 ms)
+3881ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(59 ms)
+3926ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(58 ms)
+3882ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(59 ms)
+3889ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(61 ms)
+3854ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(60 ms)
+3837ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(60 ms)
+3927ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(154 ms)
+1205ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(92 ms)
+92ms|G1 Old Generation|end of major GC|G1 Evacuation Pause(8544 ms)
+12754ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(35 ms)
+4013ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(49 ms)
+3837ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(61 ms)
+3888ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(60 ms)
+3933ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(59 ms)
+3878ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(58 ms)
+3919ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(61 ms)
+3818ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(58 ms)
+3846ms|G1 Young Generation|end of minor GC|G1 Evacuation Pause(59 ms)
+1710ms|G1 Young Generation|end of minor GC|G1 Humongous Allocation(41 ms)
+41ms|G1 Old Generation|end of major GC|G1 Humongous Allocation(6833 ms)
+6833ms|G1 Old Generation|end of major GC|G1 Humongous Allocation(5971 ms)
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3689)
+	at java.base/java.util.ArrayList.grow(ArrayList.java:237)
+	at java.base/java.util.ArrayList.grow(ArrayList.java:242)
+	at java.base/java.util.ArrayList.add(ArrayList.java:485)
+	at java.base/java.util.ArrayList.add(ArrayList.java:498)
+	at otus.java.gk.GcDemo.addMemoryLeak(GcDemo.java:75)
+	at otus.java.gk.GcDemo.start(GcDemo.java:30)
+	at otus.java.gk.Main.main(Main.java:5)
+Storage size is 798_381_090
+
+> Task :hw04-gk:Main.main() FAILED
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
+Use '--warning-mode all' to show the individual deprecation warnings.
+See https://docs.gradle.org/6.6.1/userguide/command_line_interface.html#sec:command_line_warnings
+2 actionable tasks: 1 executed, 1 up-to-date
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':hw04-gk:Main.main()'.
+> Process 'command 'C:/Program Files/JetBrains/IntelliJ IDEA 2019.3.3/jbr/bin/java.exe'' finished with non-zero exit value 1
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 20m 24s
+6:26:52 PM: Task execution finished 'Main.main()'.

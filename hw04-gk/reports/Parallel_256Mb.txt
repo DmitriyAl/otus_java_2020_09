@@ -1,0 +1,124 @@
+11:34:13 AM: Executing task 'Main.main()'...
+
+> Task :buildSrc:compileJava UP-TO-DATE
+> Task :buildSrc:compileGroovy NO-SOURCE
+> Task :buildSrc:processResources NO-SOURCE
+> Task :buildSrc:classes UP-TO-DATE
+> Task :buildSrc:jar UP-TO-DATE
+> Task :buildSrc:assemble UP-TO-DATE
+> Task :buildSrc:compileTestJava NO-SOURCE
+> Task :buildSrc:compileTestGroovy NO-SOURCE
+> Task :buildSrc:processTestResources NO-SOURCE
+> Task :buildSrc:testClasses UP-TO-DATE
+> Task :buildSrc:test NO-SOURCE
+> Task :buildSrc:check UP-TO-DATE
+> Task :buildSrc:build UP-TO-DATE
+> Task :hw04-gk:compileJava UP-TO-DATE
+> Task :hw04-gk:processResources NO-SOURCE
+> Task :hw04-gk:classes UP-TO-DATE
+
+> Task :hw04-gk:Main.main()
+Starting pid: 2372@k324
+GC name:PS MarkSweep
+GC name:PS Scavenge
+358ms|PS Scavenge|end of minor GC|Allocation Failure(4 ms)
+190ms|PS Scavenge|end of minor GC|Allocation Failure(5 ms)
+191ms|PS Scavenge|end of minor GC|Allocation Failure(8 ms)
+203ms|PS Scavenge|end of minor GC|Allocation Failure(7 ms)
+190ms|PS Scavenge|end of minor GC|Allocation Failure(8 ms)
+203ms|PS Scavenge|end of minor GC|Allocation Failure(7 ms)
+125ms|PS Scavenge|end of minor GC|Allocation Failure(7 ms)
+140ms|PS Scavenge|end of minor GC|Allocation Failure(8 ms)
+139ms|PS Scavenge|end of minor GC|Allocation Failure(10 ms)
+142ms|PS Scavenge|end of minor GC|Allocation Failure(11 ms)
+124ms|PS Scavenge|end of minor GC|Allocation Failure(10 ms)
+146ms|PS Scavenge|end of minor GC|Allocation Failure(9 ms)
+146ms|PS Scavenge|end of minor GC|Allocation Failure(15 ms)
+146ms|PS Scavenge|end of minor GC|Allocation Failure(17 ms)
+142ms|PS Scavenge|end of minor GC|Allocation Failure(16 ms)
+139ms|PS Scavenge|end of minor GC|Allocation Failure(16 ms)
+143ms|PS Scavenge|end of minor GC|Allocation Failure(17 ms)
+115ms|PS Scavenge|end of minor GC|Allocation Failure(11 ms)
+135ms|PS Scavenge|end of minor GC|Allocation Failure(12 ms)
+134ms|PS Scavenge|end of minor GC|Allocation Failure(17 ms)
+154ms|PS Scavenge|end of minor GC|Allocation Failure(15 ms)
+145ms|PS Scavenge|end of minor GC|Allocation Failure(16 ms)
+154ms|PS Scavenge|end of minor GC|Allocation Failure(18 ms)
+157ms|PS Scavenge|end of minor GC|Allocation Failure(18 ms)
+165ms|PS Scavenge|end of minor GC|Allocation Failure(18 ms)
+166ms|PS Scavenge|end of minor GC|Allocation Failure(19 ms)
+174ms|PS Scavenge|end of minor GC|Allocation Failure(19 ms)
+129ms|PS Scavenge|end of minor GC|Allocation Failure(15 ms)
+147ms|PS Scavenge|end of minor GC|Allocation Failure(16 ms)
+149ms|PS Scavenge|end of minor GC|Allocation Failure(17 ms)
+156ms|PS Scavenge|end of minor GC|Allocation Failure(19 ms)
+160ms|PS Scavenge|end of minor GC|Allocation Failure(18 ms)
+168ms|PS Scavenge|end of minor GC|Allocation Failure(19 ms)
+169ms|PS Scavenge|end of minor GC|Allocation Failure(19 ms)
+179ms|PS Scavenge|end of minor GC|Allocation Failure(20 ms)
+180ms|PS Scavenge|end of minor GC|Allocation Failure(20 ms)
+191ms|PS Scavenge|end of minor GC|Allocation Failure(22 ms)
+190ms|PS Scavenge|end of minor GC|Allocation Failure(22 ms)
+201ms|PS Scavenge|end of minor GC|Allocation Failure(24 ms)
+184ms|PS Scavenge|end of minor GC|Allocation Failure(21 ms)
+21ms|PS MarkSweep|end of major GC|Ergonomics(332 ms)
+460ms|PS Scavenge|end of minor GC|Allocation Failure(19 ms)
+19ms|PS MarkSweep|end of major GC|Ergonomics(175 ms)
+363ms|PS Scavenge|end of minor GC|Allocation Failure(16 ms)
+206ms|PS Scavenge|end of minor GC|Allocation Failure(25 ms)
+215ms|PS Scavenge|end of minor GC|Allocation Failure(32 ms)
+206ms|PS Scavenge|end of minor GC|Allocation Failure(35 ms)
+35ms|PS MarkSweep|end of major GC|Ergonomics(287 ms)
+463ms|PS MarkSweep|end of major GC|Ergonomics(227 ms)
+392ms|PS MarkSweep|end of major GC|Ergonomics(190 ms)
+343ms|PS MarkSweep|end of major GC|Ergonomics(204 ms)
+350ms|PS MarkSweep|end of major GC|Ergonomics(207 ms)
+341ms|PS MarkSweep|end of major GC|Ergonomics(208 ms)
+335ms|PS MarkSweep|end of major GC|Ergonomics(212 ms)
+331ms|PS MarkSweep|end of major GC|Ergonomics(241 ms)
+350ms|PS MarkSweep|end of major GC|Ergonomics(214 ms)
+315ms|PS MarkSweep|end of major GC|Ergonomics(228 ms)
+324ms|PS MarkSweep|end of major GC|Ergonomics(226 ms)
+316ms|PS MarkSweep|end of major GC|Ergonomics(220 ms)
+303ms|PS MarkSweep|end of major GC|Ergonomics(228 ms)
+306ms|PS MarkSweep|end of major GC|Ergonomics(229 ms)
+301ms|PS MarkSweep|end of major GC|Ergonomics(226 ms)
+293ms|PS MarkSweep|end of major GC|Ergonomics(243 ms)
+308ms|PS MarkSweep|end of major GC|Ergonomics(241 ms)
+301ms|PS MarkSweep|end of major GC|Ergonomics(248 ms)
+304ms|PS MarkSweep|end of major GC|Ergonomics(239 ms)
+290ms|PS MarkSweep|end of major GC|Ergonomics(245 ms)
+294ms|PS MarkSweep|end of major GC|Ergonomics(269 ms)
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3689)
+	at java.base/java.util.ArrayList.grow(ArrayList.java:237)
+	at java.base/java.util.ArrayList.grow(ArrayList.java:242)
+	at java.base/java.util.ArrayList.add(ArrayList.java:485)
+	at java.base/java.util.ArrayList.add(ArrayList.java:498)
+	at otus.java.gk.GcDemo.addMemoryLeak(GcDemo.java:75)
+	at otus.java.gk.GcDemo.start(GcDemo.java:30)
+	at otus.java.gk.Main.main(Main.java:5)
+303ms|PS MarkSweep|end of major GC|Ergonomics(241 ms)
+241ms|PS MarkSweep|end of major GC|Allocation Failure(310 ms)
+Storage size is 6_153_400
+
+> Task :hw04-gk:Main.main() FAILED
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
+Use '--warning-mode all' to show the individual deprecation warnings.
+See https://docs.gradle.org/6.6.1/userguide/command_line_interface.html#sec:command_line_warnings
+2 actionable tasks: 1 executed, 1 up-to-date
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':hw04-gk:Main.main()'.
+> Process 'command 'C:/Program Files/JetBrains/IntelliJ IDEA 2019.3.3/jbr/bin/java.exe'' finished with non-zero exit value 1
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 16s
+11:34:29 AM: Task execution finished 'Main.main()'.
