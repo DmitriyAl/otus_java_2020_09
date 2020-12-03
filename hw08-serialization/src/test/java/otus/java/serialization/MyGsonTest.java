@@ -36,6 +36,8 @@ class MyGsonTest {
         String json = gson.toJson(simpleObject);
         String myJson = myGson.toJson(simpleObject);
         assertThat(myJson).isEqualTo(json);
+        SimpleObject fromJson = gson.fromJson(json, SimpleObject.class);
+//        assertThat(fromJson).isEqualToComparingFieldByField(simpleObject);
     }
 
     @Test
@@ -49,5 +51,7 @@ class MyGsonTest {
         String json = gson.toJson(complexObject);
         String myJson = myGson.toJson(complexObject);
         assertThat(myJson).isEqualTo(json);
+        ComplexObject fromJson = gson.fromJson(json, ComplexObject.class);
+//        assertThat(fromJson).isEqualToComparingFieldByField(complexObject);
     }
 }

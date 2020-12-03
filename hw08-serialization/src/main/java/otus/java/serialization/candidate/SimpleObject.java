@@ -1,7 +1,9 @@
 package otus.java.serialization.candidate;
 
 import java.math.BigDecimal;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 public class SimpleObject {
     private String stringValue;
@@ -79,5 +81,39 @@ public class SimpleObject {
 
     public void setBigDecimalValue(BigDecimal bigDecimalValue) {
         this.bigDecimalValue = bigDecimalValue;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (object == null || getClass() != object.getClass()) return false;
+
+        SimpleObject that = (SimpleObject) object;
+
+        if (intValue != that.intValue) return false;
+        if (booleanValue != that.booleanValue) return false;
+        if (!Objects.equals(stringValue, that.stringValue)) return false;
+        if (!Arrays.equals(floatArray, that.floatArray)) return false;
+        // Probably incorrect - comparing Object[] arrays with Arrays.equals
+        if (!Arrays.equals(objectsArray, that.objectsArray)) return false;
+        if (!Objects.equals(longList, that.longList)) return false;
+        if (!Objects.equals(objectsList, that.objectsList)) return false;
+        if (!Objects.equals(bigDecimalValue, that.bigDecimalValue))
+            return false;
+        return Objects.equals(nullValue, that.nullValue);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = stringValue != null ? stringValue.hashCode() : 0;
+        result = 31 * result + intValue;
+        result = 31 * result + Arrays.hashCode(floatArray);
+        result = 31 * result + Arrays.hashCode(objectsArray);
+        result = 31 * result + (booleanValue ? 1 : 0);
+        result = 31 * result + (longList != null ? longList.hashCode() : 0);
+        result = 31 * result + (objectsList != null ? objectsList.hashCode() : 0);
+        result = 31 * result + (bigDecimalValue != null ? bigDecimalValue.hashCode() : 0);
+        result = 31 * result + (nullValue != null ? nullValue.hashCode() : 0);
+        return result;
     }
 }
