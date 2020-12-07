@@ -21,6 +21,9 @@ public class FieldTypeDefiner {
         if (Boolean.class.isAssignableFrom(clazz)) {
             return FieldType.BOOLEAN;
         }
+        if (Character.class.isAssignableFrom(clazz)) {
+            return FieldType.CHARACTER;
+        }
         if (Collection.class.isAssignableFrom(clazz)) {
             return FieldType.COLLECTION;
         }

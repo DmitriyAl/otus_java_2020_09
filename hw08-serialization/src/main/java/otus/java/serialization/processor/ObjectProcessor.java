@@ -2,26 +2,43 @@ package otus.java.serialization.processor;
 
 import otus.java.serialization.handler.field.FieldHandler;
 import otus.java.serialization.handler.field.FieldHandlerManager;
+import otus.java.serialization.handler.value.ValueHandlerManager;
 import otus.java.serialization.model.FieldType;
 import otus.java.serialization.model.FieldValue;
 import otus.java.serialization.model.ParsedField;
+import otus.java.serialization.util.ArrayToJsonArray;
+import otus.java.serialization.util.CollectionToJsonArray;
 import otus.java.serialization.util.FieldTypeDefiner;
 
+import javax.json.Json;
+import javax.json.JsonArrayBuilder;
 import javax.json.JsonObjectBuilder;
 import java.lang.reflect.Field;
 
-public class FieldProcessor {
+public class ObjectProcessor {
+    private final ValueHandlerManager valueHandlerManager;
     private final FieldHandlerManager fieldHandlerManager;
 
-    public FieldProcessor() {
-        this.fieldHandlerManager = new FieldHandlerManager(this);
+    public ObjectProcessor() {
+        this.valueHandlerManager = new ValueHandlerManager(this);
+        this.fieldHandlerManager = new FieldHandlerManager(this, valueHandlerManager);
     }
 
-    public void processFields(JsonObjectBuilder builder, Object object) {
+    public JsonObjectBuilder processFields(Object object) {
+        JsonObjectBuilder builder = Json.createObjectBuilder();
         Field[] declaredFields = object.getClass().getDeclaredFields();
         for (Field field : declaredFields) {
             processField(builder, field, object);
         }
+        return builder;
+    }
+
+    public JsonArrayBuilder processCollection(Object object) {
+        return CollectionToJsonArray.convert(valueHandlerManager, object);
+    }
+
+    public JsonArrayBuilder processArray(Object object) {
+        return ArrayToJsonArray.convert(valueHandlerManager, object);
     }
 
     private void processField(JsonObjectBuilder builder, Field field, Object object) {

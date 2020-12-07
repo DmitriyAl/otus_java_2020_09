@@ -1,22 +1,20 @@
 package otus.java.serialization.handler.field;
 
 import otus.java.serialization.model.ParsedField;
-import otus.java.serialization.processor.FieldProcessor;
+import otus.java.serialization.processor.ObjectProcessor;
 
-import javax.json.Json;
 import javax.json.JsonObjectBuilder;
 
 public class ObjectFieldHandler implements FieldHandler {
-    private final FieldProcessor processor;
+    private final ObjectProcessor processor;
 
-    public ObjectFieldHandler(FieldProcessor processor) {
+    public ObjectFieldHandler(ObjectProcessor processor) {
         this.processor = processor;
     }
 
     @Override
     public void handleField(JsonObjectBuilder builder, ParsedField parsedField) {
-        JsonObjectBuilder innerObjectBuilder = Json.createObjectBuilder();
-        processor.processFields(innerObjectBuilder, parsedField.getValue());
+        JsonObjectBuilder innerObjectBuilder = processor.processFields(parsedField.getValue());
         builder.add(parsedField.getFieldName(), innerObjectBuilder);
     }
 }

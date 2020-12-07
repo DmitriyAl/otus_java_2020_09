@@ -7,6 +7,7 @@ public enum FieldType {
     BOOLEAN,
     ARRAY,
     COLLECTION,
+    CHARACTER,
     STRING,
     OBJECT
 }

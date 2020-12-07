@@ -1,23 +1,21 @@
 package otus.java.serialization.handler.value;
 
 import otus.java.serialization.model.FieldValue;
-import otus.java.serialization.processor.FieldProcessor;
+import otus.java.serialization.processor.ObjectProcessor;
 
-import javax.json.Json;
 import javax.json.JsonArrayBuilder;
 import javax.json.JsonObjectBuilder;
 
 public class ObjectValueHandler implements ValueHandler {
-    private final FieldProcessor processor;
+    private final ObjectProcessor processor;
 
-    public ObjectValueHandler(FieldProcessor processor) {
+    public ObjectValueHandler(ObjectProcessor processor) {
         this.processor = processor;
     }
 
     @Override
     public void handleValue(JsonArrayBuilder builder, FieldValue fieldValue) {
-        JsonObjectBuilder innerObjectBuilder = Json.createObjectBuilder();
-        processor.processFields(innerObjectBuilder, fieldValue.getValue());
+        JsonObjectBuilder innerObjectBuilder = processor.processFields(fieldValue.getValue());
         builder.add(innerObjectBuilder);
     }
 }

@@ -1,7 +1,7 @@
 package otus.java.serialization.handler.value;
 
 import otus.java.serialization.model.FieldType;
-import otus.java.serialization.processor.FieldProcessor;
+import otus.java.serialization.processor.ObjectProcessor;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -9,7 +9,7 @@ import java.util.Map;
 public class ValueHandlerManager {
     private final Map<FieldType, ValueHandler> handlers;
 
-    public ValueHandlerManager(FieldProcessor processor) {
+    public ValueHandlerManager(ObjectProcessor processor) {
         this.handlers = new HashMap<>();
         handlers.put(FieldType.STRING, new DefaultValueHandler());
         handlers.put(FieldType.NUMBER_WRAPPER, new NumberValueHandler());

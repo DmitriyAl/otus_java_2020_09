@@ -1,26 +1,49 @@
 package otus.java.serialization;
 
-import otus.java.serialization.processor.FieldProcessor;
+import otus.java.serialization.model.FieldType;
+import otus.java.serialization.processor.ObjectProcessor;
+import otus.java.serialization.util.FieldTypeDefiner;
 
-import javax.json.Json;
-import javax.json.JsonObject;
-import javax.json.JsonObjectBuilder;
+import javax.json.*;
 
 public class MyGson {
-    private final FieldProcessor fieldProcessor;
+    private final ObjectProcessor objectProcessor;
 
-    public MyGson(FieldProcessor fieldProcessor) {
-        this.fieldProcessor = fieldProcessor;
+    public MyGson() {
+        this.objectProcessor = new ObjectProcessor();
     }
 
     public String toJson(Object object) {
-        JsonObject jsonObject = handleFields(object);
-        return jsonObject.toString();
+        if (object == null) {
+            return "null";
+        }
+        FieldType fieldType = FieldTypeDefiner.defineType(object);
+        if (fieldType == FieldType.OBJECT) {
+            return handleObject(object).toString();
+        } else if (fieldType == FieldType.COLLECTION) {
+            return handleCollection(object).toString();
+        } else if (fieldType == FieldType.ARRAY) {
+            return handleArray(object).toString();
+        } else if (fieldType == FieldType.CHARACTER || fieldType == FieldType.STRING) {
+            return handleCharSequence(object);
+        } else {
+            return object.toString();
+        }
     }
 
-    private JsonObject handleFields(Object object) {
-        JsonObjectBuilder builder = Json.createObjectBuilder();
-        fieldProcessor.processFields(builder, object);
-        return builder.build();
+    private String handleCharSequence(Object object) {
+        return String.format("\"%s\"", object.toString());
+    }
+
+    private JsonArray handleCollection(Object object) {
+        return objectProcessor.processCollection(object).build();
+    }
+
+    private JsonArray handleArray(Object object) {
+        return objectProcessor.processArray(object).build();
+    }
+
+    private JsonObject handleObject(Object object) {
+        return objectProcessor.processFields(object).build();
     }
 }

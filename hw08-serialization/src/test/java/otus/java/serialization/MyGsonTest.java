@@ -3,15 +3,16 @@ package otus.java.serialization;
 import com.google.gson.Gson;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import otus.java.serialization.candidate.SimpleObject;
 import otus.java.serialization.candidate.ComplexObject;
-import otus.java.serialization.processor.FieldProcessor;
+import otus.java.serialization.candidate.SimpleObject;
 
 import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class MyGsonTest {
     private SimpleObject simpleObject;
@@ -32,12 +33,10 @@ class MyGsonTest {
     @Test
     public void setSimpleObject() {
         Gson gson = new Gson();
-        MyGson myGson = new MyGson(new FieldProcessor());
+        MyGson myGson = new MyGson();
         String json = gson.toJson(simpleObject);
         String myJson = myGson.toJson(simpleObject);
         assertThat(myJson).isEqualTo(json);
-        SimpleObject fromJson = gson.fromJson(json, SimpleObject.class);
-//        assertThat(fromJson).isEqualToComparingFieldByField(simpleObject);
     }
 
     @Test
@@ -47,11 +46,27 @@ class MyGsonTest {
         complexObject.setObject(simpleObject);
         complexObject.setObjects(Arrays.asList(1, 2.f, true, simpleObject, new Object[]{"array"}, Collections.singletonList(1)));
         Gson gson = new Gson();
-        MyGson myGson = new MyGson(new FieldProcessor());
+        MyGson myGson = new MyGson();
         String json = gson.toJson(complexObject);
         String myJson = myGson.toJson(complexObject);
         assertThat(myJson).isEqualTo(json);
-        ComplexObject fromJson = gson.fromJson(json, ComplexObject.class);
-//        assertThat(fromJson).isEqualToComparingFieldByField(complexObject);
+    }
+
+    @Test
+    void test() {
+        Gson gson = new Gson();
+        MyGson serializer = new MyGson();
+        assertEquals(gson.toJson(null), serializer.toJson(null));
+        assertEquals(gson.toJson((byte)1), serializer.toJson((byte)1));
+        assertEquals(gson.toJson((short)1f), serializer.toJson((short)1f));
+        assertEquals(gson.toJson(1), serializer.toJson(1));
+        assertEquals(gson.toJson(1L), serializer.toJson(1L));
+        assertEquals(gson.toJson(1f), serializer.toJson(1f));
+        assertEquals(gson.toJson(1d), serializer.toJson(1d));
+        assertEquals(gson.toJson("aaa"), serializer.toJson("aaa"));
+        assertEquals(gson.toJson('a'), serializer.toJson('a'));
+        assertEquals(gson.toJson(new int[] {1, 2, 3}), serializer.toJson(new int[] {1, 2, 3}));
+        assertEquals(gson.toJson(List.of(1, 2 ,3)), serializer.toJson(List.of(1, 2 ,3)));
+        assertEquals(gson.toJson(Collections.singletonList(1)), serializer.toJson(Collections.singletonList(1)));
     }
 }

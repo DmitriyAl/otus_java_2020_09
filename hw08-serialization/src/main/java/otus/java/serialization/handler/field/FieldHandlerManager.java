@@ -2,7 +2,7 @@ package otus.java.serialization.handler.field;
 
 import otus.java.serialization.handler.value.ValueHandlerManager;
 import otus.java.serialization.model.FieldType;
-import otus.java.serialization.processor.FieldProcessor;
+import otus.java.serialization.processor.ObjectProcessor;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -10,9 +10,8 @@ import java.util.Map;
 public class FieldHandlerManager {
     private final Map<FieldType, FieldHandler> handlers;
 
-    public FieldHandlerManager(FieldProcessor processor) {
+    public FieldHandlerManager(ObjectProcessor processor, ValueHandlerManager valueHandlerManager) {
         this.handlers = new HashMap<>();
-        ValueHandlerManager valueHandlerManager = new ValueHandlerManager(processor);
         handlers.put(FieldType.STRING, new DefaultFieldHandler());
         handlers.put(FieldType.NUMBER_WRAPPER, new NumberFieldHandler());
         handlers.put(FieldType.BIG_DECIMAL, new BigDecimalFieldHandler());
