@@ -1,0 +1,30 @@
+plugins {
+    // Apply the java plugin to add support for Java
+    id 'java'
+    id 'idea'
+}
+
+sourceCompatibility = JavaVersion.VERSION_15
+targetCompatibility = JavaVersion.VERSION_15
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'com.google.code.gson:gson'
+    implementation 'javax.json:javax.json-api'
+    implementation 'org.glassfish:javax.json'
+    testImplementation('org.junit.jupiter:junit-jupiter-api')
+    testImplementation('org.junit.jupiter:junit-jupiter-engine')
+    testImplementation('org.junit.jupiter:junit-jupiter-params')
+    testImplementation('org.assertj:assertj-core')
+    testImplementation('org.mockito:mockito-core')
+    testImplementation('org.mockito:mockito-junit-jupiter')
+}
+test {
+    useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+}
