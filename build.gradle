@@ -32,6 +32,8 @@ allprojects {
             dependency("com.google.guava:guava:${Versions.guava}")
             dependency("org.glassfish:javax.json:${Versions.glassfishJson}")
             dependency("com.google.code.gson:gson:${Versions.gson}")
+            dependency("org.flywaydb:flyway-core:${Versions.flyway}")
+            dependency("org.postgresql:postgresql:${Versions.postgresql}")
         }
     }
 
