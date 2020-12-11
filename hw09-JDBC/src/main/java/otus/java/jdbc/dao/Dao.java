@@ -11,10 +11,6 @@ public interface Dao<T, ID> {
 
     Optional<T> findById(ID id);
 
-    ID insert(T client);
-
-    ID update(T client);
-
     ID insertOrUpdate(T user);
 
     SessionManager getSessionManager();

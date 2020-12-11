@@ -39,7 +39,7 @@ public class EntitySQLMetaDataImpl implements EntitySQLMetaData {
     }
 
     @Override
-    public String getInsertSqlWithoutId() {
+    public String getInsertSql() {
         StringBuilder sb = new StringBuilder("insert into ");
         sb.append(classMetadata.getName().toLowerCase());
         sb.append(" (");
@@ -51,14 +51,17 @@ public class EntitySQLMetaDataImpl implements EntitySQLMetaData {
     }
 
     @Override
-    public String getInsertSqlWithId() {
+    public String getInsertUpdateSql() {
         StringBuilder sb = new StringBuilder("insert into ");
         sb.append(classMetadata.getName().toLowerCase());
         sb.append(" (");
         appendFields(sb, classMetadata.getAllFields());
         sb.append(") values(");
         appendParamsLine(sb, classMetadata.getAllFields().size());
-        sb.append(")");
+        sb.append(") on conflict (");
+        sb.append(classMetadata.getIdField().getName().toLowerCase());
+        sb.append(") do update set ");
+        appendExcludedParams(sb, classMetadata.getFieldsWithoutId());
         return sb.toString();
     }
 
@@ -71,22 +74,12 @@ public class EntitySQLMetaDataImpl implements EntitySQLMetaData {
         }
     }
 
-    @Override
-    public String getUpdateSql() {
-        StringBuilder sb = new StringBuilder("update ");
-        sb.append(classMetadata.getName().toLowerCase());
-        sb.append(" set ");
-        prepareUpdateFields(sb, classMetadata.getFieldsWithoutId());
-        sb.append(" where ");
-        sb.append(classMetadata.getIdField().getName().toLowerCase());
-        sb.append(" = ?");
-        return sb.toString();
-    }
-
-    private void prepareUpdateFields(StringBuilder sb, List<Field> fields) {
+    private void appendExcludedParams(StringBuilder sb, List<Field> fields) {
         for (Iterator<Field> it = fields.iterator(); it.hasNext(); ) {
-            sb.append(it.next().getName().toLowerCase());
-            sb.append(" = ?");
+            String fieldName = it.next().getName().toLowerCase();
+            sb.append(fieldName);
+            sb.append(" = excluded.");
+            sb.append(fieldName);
             if (it.hasNext()) {
                 sb.append(", ");
             }

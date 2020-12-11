@@ -12,7 +12,7 @@ import java.util.function.Function;
 public class DbExecutorImpl<T, ID> implements DbExecutor<T, ID> {
 
     @Override
-    public ID executeInsert(Connection connection, String sql, List<Object> params) throws SQLException {
+    public ID executeInsertOrUpdate(Connection connection, String sql, List<Object> params) throws SQLException {
         Savepoint savePoint = connection.setSavepoint("savePointName");
         try (var pst = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
             for (int idx = 0; idx < params.size(); idx++) {

@@ -28,21 +28,21 @@ public class JdbcMapperImpl<T, ID> implements JdbcMapper<T, ID> {
     }
 
     @Override
-    public ID insert(T objectData) {
+    public ID insertOrUpdate(T objectData) {
         try {
-            return executeInsert(objectData, getParam(objectData, classMetaData.getIdField()) != null);
+            List<Object> params;
+            String sql;
+            if (getParam(objectData, classMetaData.getIdField()) == null) {
+                params = getParams(objectData, classMetaData.getFieldsWithoutId());
+                sql = sqlMetaData.getInsertSql();
+            } else {
+                params = getParams(objectData, classMetaData.getAllFields());
+                sql = sqlMetaData.getInsertUpdateSql();
+            }
+            return dbExecutor.executeInsertOrUpdate(getConnection(), sql, params);
         } catch (Exception e) {
             throw new DaoException(e);
         }
-    }
-
-    private ID executeInsert(T object, boolean includeId) throws SQLException {
-        if (includeId) {
-            return dbExecutor.executeInsert(getConnection(), sqlMetaData.getInsertSqlWithId(),
-                    getParams(object, classMetaData.getAllFields()));
-        }
-        return dbExecutor.executeInsert(getConnection(), sqlMetaData.getInsertSqlWithoutId(),
-                getParams(object, classMetaData.getFieldsWithoutId()));
     }
 
     private List<Object> getParams(T object, List<Field> fields) {
@@ -66,29 +66,6 @@ public class JdbcMapperImpl<T, ID> implements JdbcMapper<T, ID> {
     }
 
     @Override
-    public ID update(T objectData) {
-        try {
-            List<Object> params = getParams(objectData, classMetaData.getFieldsWithoutId());
-            params.add(getParam(objectData, classMetaData.getIdField()));
-            return dbExecutor.executeInsert(getConnection(), sqlMetaData.getUpdateSql(), params);
-        } catch (Exception e) {
-            throw new DaoException(e);
-        }
-    }
-
-    @Override
-    public ID insertOrUpdate(T objectData) {
-        ID id = (ID) getParam(objectData, classMetaData.getIdField());
-        if (id != null) {
-            Optional<T> optional = findById(id);
-            if (optional.isPresent()) {
-                return update(objectData);
-            }
-        }
-        return insert(objectData);
-    }
-
-    @Override
     public Optional<T> findById(ID id) {
         try {
             return dbExecutor.executeSelect(getConnection(), sqlMetaData.getSelectByIdSql(), id, this::handleSelect);
@@ -107,12 +84,6 @@ public class JdbcMapperImpl<T, ID> implements JdbcMapper<T, ID> {
             e.printStackTrace();
         }
         return null;
-    }
-
-    private void initializeField(T result, Field field, ResultSet resultSet, int index) throws Exception {
-        Object value = resultSet.getObject(index);
-        field.setAccessible(true);
-        field.set(result, value);
     }
 
     @Override
@@ -145,6 +116,12 @@ public class JdbcMapperImpl<T, ID> implements JdbcMapper<T, ID> {
             initializeField(result, fields.get(i), resultSet, i + 1);
         }
         return result;
+    }
+
+    private void initializeField(T result, Field field, ResultSet resultSet, int index) throws Exception {
+        Object value = resultSet.getObject(index);
+        field.setAccessible(true);
+        field.set(result, value);
     }
 
     private Connection getConnection() {
