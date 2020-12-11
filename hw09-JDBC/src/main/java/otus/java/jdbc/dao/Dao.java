@@ -6,16 +6,16 @@ import otus.java.jdbc.sessionmanager.SessionManager;
 import java.util.List;
 import java.util.Optional;
 
-public interface Dao<T> {
+public interface Dao<T, ID> {
     List<T> findAll();
 
-    Optional<T> findById(Object id);
+    Optional<T> findById(ID id);
 
-    long insert(T client);
+    ID insert(T client);
 
-    long update(T client);
+    ID update(T client);
 
-    long insertOrUpdate(T user);
+    ID insertOrUpdate(T user);
 
     SessionManager getSessionManager();
 }

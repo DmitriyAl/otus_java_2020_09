@@ -1,5 +1,7 @@
 package otus.java.jdbc.sessionmanager;
 
+import otus.java.jdbc.exception.SessionManagerException;
+
 import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.SQLException;

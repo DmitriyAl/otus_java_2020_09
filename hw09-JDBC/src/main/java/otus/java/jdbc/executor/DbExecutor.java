@@ -7,9 +7,9 @@ import java.util.List;
 import java.util.Optional;
 import java.util.function.Function;
 
-public interface DbExecutor<T> {
+public interface DbExecutor<T, ID> {
 
-    long executeInsert(Connection connection, String sql, List<Object> params) throws SQLException;
+    ID executeInsert(Connection connection, String sql, List<Object> params) throws SQLException;
 
     Optional<T> executeSelect(Connection connection, String sql, Object id, Function<ResultSet, T> rsHandler) throws SQLException;
 

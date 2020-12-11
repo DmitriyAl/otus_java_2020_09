@@ -4,10 +4,10 @@ import java.lang.reflect.Field;
 import java.util.Iterator;
 import java.util.List;
 
-public class EntitySQLMetaDataImpl<T> implements EntitySQLMetaData {
-    private final EntityClassMetaData<T> classMetadata;
+public class EntitySQLMetaDataImpl implements EntitySQLMetaData {
+    private final EntityClassMetaData<?> classMetadata;
 
-    public EntitySQLMetaDataImpl(EntityClassMetaData<T> classMetadata) {
+    public EntitySQLMetaDataImpl(EntityClassMetaData<?> classMetadata) {
         this.classMetadata = classMetadata;
     }
 
@@ -39,13 +39,25 @@ public class EntitySQLMetaDataImpl<T> implements EntitySQLMetaData {
     }
 
     @Override
-    public String getInsertSql() {
+    public String getInsertSqlWithoutId() {
         StringBuilder sb = new StringBuilder("insert into ");
         sb.append(classMetadata.getName().toLowerCase());
         sb.append(" (");
         appendFields(sb, classMetadata.getFieldsWithoutId());
         sb.append(") values(");
         appendParamsLine(sb, classMetadata.getFieldsWithoutId().size());
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public String getInsertSqlWithId() {
+        StringBuilder sb = new StringBuilder("insert into ");
+        sb.append(classMetadata.getName().toLowerCase());
+        sb.append(" (");
+        appendFields(sb, classMetadata.getAllFields());
+        sb.append(") values(");
+        appendParamsLine(sb, classMetadata.getAllFields().size());
         sb.append(")");
         return sb.toString();
     }

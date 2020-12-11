@@ -1,4 +1,4 @@
-package otus.java.jdbc.sessionmanager;
+package otus.java.jdbc.exception;
 
 
 public class SessionManagerException extends RuntimeException {

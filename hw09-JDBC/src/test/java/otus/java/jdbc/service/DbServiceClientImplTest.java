@@ -5,8 +5,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import otus.java.jdbc.PgDataSource;
 import otus.java.jdbc.dao.Dao;
-import otus.java.jdbc.dao.ClientDao;
 import otus.java.jdbc.executor.DbExecutorImpl;
+import otus.java.jdbc.mapper.JdbcMapperImpl;
 import otus.java.jdbc.model.Client;
 import otus.java.jdbc.sessionmanager.SessionManagerJdbc;
 
@@ -15,16 +15,16 @@ import javax.sql.DataSource;
 import static org.assertj.core.api.Assertions.assertThat;
 
 class DbServiceClientImplTest {
-    DBService<Client> serviceClient;
+    DBService<Client, Long> serviceClient;
 
     @BeforeEach
     void init() {
         var dataSource = new PgDataSource();
         flywayMigrations(dataSource);
         var sessionManager = new SessionManagerJdbc(dataSource);
-        DbExecutorImpl<Client> dbExecutor = new DbExecutorImpl<>();
-        Dao<Client> dao = new ClientDao(sessionManager, dbExecutor);
-        serviceClient = new ClientDbService(dao);
+        DbExecutorImpl<Client, Long> dbExecutor = new DbExecutorImpl<>();
+        Dao<Client, Long> dao = new JdbcMapperImpl<>(sessionManager, dbExecutor, Client.class);
+        serviceClient = new DbServiceImpl<>(dao);
     }
 
     @Test

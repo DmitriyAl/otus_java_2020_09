@@ -3,30 +3,30 @@ package otus.java.jdbc.service;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import otus.java.jdbc.dao.Dao;
-import otus.java.jdbc.model.Client;
+import otus.java.jdbc.exception.DbServiceException;
 
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
-public class ClientDbService implements DBService<Client> {
-    private static final Logger logger = LoggerFactory.getLogger(ClientDbService.class);
+public class DbServiceImpl<T, ID> implements DBService<T, ID> {
+    private static final Logger logger = LoggerFactory.getLogger(DbServiceImpl.class);
 
-    private final Dao<Client> dao;
+    private final Dao<T, ID> dao;
 
-    public ClientDbService(Dao<Client> dao) {
+    public DbServiceImpl(Dao<T, ID> dao) {
         this.dao = dao;
     }
 
     @Override
-    public long save(Client client) {
+    public ID save(T entity) {
         try (var sessionManager = dao.getSessionManager()) {
             sessionManager.beginSession();
             try {
-                var clientId = dao.insertOrUpdate(client);
+                var clientId = dao.insertOrUpdate(entity);
                 sessionManager.commitSession();
 
-                logger.info("created client: {}", clientId);
+                logger.info("created entity: {}", clientId);
                 return clientId;
             } catch (Exception e) {
                 sessionManager.rollbackSession();
@@ -36,14 +36,14 @@ public class ClientDbService implements DBService<Client> {
     }
 
     @Override
-    public Optional<Client> getById(Object id) {
+    public Optional<T> getById(ID id) {
         try (var sessionManager = dao.getSessionManager()) {
             sessionManager.beginSession();
             try {
-                Optional<Client> clientOptional = dao.findById(id);
+                Optional<T> optional = dao.findById(id);
 
-                logger.info("client: {}", clientOptional.orElse(null));
-                return clientOptional;
+                logger.info("entity: {}", optional.orElse(null));
+                return optional;
             } catch (Exception e) {
                 logger.error(e.getMessage(), e);
                 sessionManager.rollbackSession();
@@ -53,13 +53,13 @@ public class ClientDbService implements DBService<Client> {
     }
 
     @Override
-    public List<Client> getAll() {
+    public List<T> getAll() {
         try (var sessionManager = dao.getSessionManager()) {
             sessionManager.beginSession();
             try {
-                List<Client> clients = dao.findAll();
-                logger.info("clients: {}", clients);
-                return clients;
+                List<T> entities = dao.findAll();
+                logger.info("entities: {}", entities);
+                return entities;
             } catch (Exception e) {
                 logger.error(e.getMessage(), e);
                 sessionManager.rollbackSession();

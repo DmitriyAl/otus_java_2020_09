@@ -9,10 +9,10 @@ import java.util.function.Function;
  * @author sergey
  * created on 03.02.19.
  */
-public class DbExecutorImpl<T> implements DbExecutor<T> {
+public class DbExecutorImpl<T, ID> implements DbExecutor<T, ID> {
 
     @Override
-    public long executeInsert(Connection connection, String sql, List<Object> params) throws SQLException {
+    public ID executeInsert(Connection connection, String sql, List<Object> params) throws SQLException {
         Savepoint savePoint = connection.setSavepoint("savePointName");
         try (var pst = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
             for (int idx = 0; idx < params.size(); idx++) {
@@ -21,7 +21,7 @@ public class DbExecutorImpl<T> implements DbExecutor<T> {
             pst.executeUpdate();
             try (ResultSet rs = pst.getGeneratedKeys()) {
                 rs.next();
-                return rs.getInt(1);
+                return (ID) rs.getObject(1);
             }
         } catch (SQLException ex) {
             connection.rollback(savePoint);

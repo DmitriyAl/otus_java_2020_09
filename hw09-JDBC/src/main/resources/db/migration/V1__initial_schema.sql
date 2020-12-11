@@ -4,4 +4,3 @@ create table if not exists client
     name varchar(50),
     age  int
 );
-

@@ -3,11 +3,11 @@ package otus.java.jdbc.service;
 import java.util.List;
 import java.util.Optional;
 
-public interface DBService<T> {
+public interface DBService<T, ID> {
 
-    long save(T client);
+    ID save(T entity);
 
-    Optional<T> getById(Object id);
+    Optional<T> getById(ID id);
 
     List<T> getAll();
 }

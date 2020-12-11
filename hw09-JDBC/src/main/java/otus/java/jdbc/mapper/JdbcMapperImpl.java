@@ -1,7 +1,8 @@
 package otus.java.jdbc.mapper;
 
-import otus.java.jdbc.dao.DaoException;
+import otus.java.jdbc.exception.DaoException;
 import otus.java.jdbc.executor.DbExecutor;
+import otus.java.jdbc.sessionmanager.SessionManager;
 import otus.java.jdbc.sessionmanager.SessionManagerJdbc;
 
 import java.lang.reflect.Field;
@@ -13,27 +14,35 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
-public class JdbcMapperImpl<T> implements JdbcMapper<T> {
+public class JdbcMapperImpl<T, ID> implements JdbcMapper<T, ID> {
     private final EntityClassMetaData<T> classMetaData;
     private final EntitySQLMetaData sqlMetaData;
     private final SessionManagerJdbc sessionManager;
-    private final DbExecutor<T> dbExecutor;
+    private final DbExecutor<T, ID> dbExecutor;
 
-    public JdbcMapperImpl(SessionManagerJdbc sessionManager, DbExecutor<T> dbExecutor, Class<T> clazz) {
+    public JdbcMapperImpl(SessionManagerJdbc sessionManager, DbExecutor<T, ID> dbExecutor, Class<T> clazz) {
         this.classMetaData = new EntityClassMetaDataImpl<>(clazz);
-        this.sqlMetaData = new EntitySQLMetaDataImpl<>(classMetaData);
+        this.sqlMetaData = new EntitySQLMetaDataImpl(classMetaData);
         this.sessionManager = sessionManager;
         this.dbExecutor = dbExecutor;
     }
 
     @Override
-    public long insert(T objectData) {
+    public ID insert(T objectData) {
         try {
-            return dbExecutor.executeInsert(getConnection(), sqlMetaData.getInsertSql(),
-                    getParams(objectData, classMetaData.getFieldsWithoutId()));
+            return executeInsert(objectData, getParam(objectData, classMetaData.getIdField()) != null);
         } catch (Exception e) {
             throw new DaoException(e);
         }
+    }
+
+    private ID executeInsert(T object, boolean includeId) throws SQLException {
+        if (includeId) {
+            return dbExecutor.executeInsert(getConnection(), sqlMetaData.getInsertSqlWithId(),
+                    getParams(object, classMetaData.getAllFields()));
+        }
+        return dbExecutor.executeInsert(getConnection(), sqlMetaData.getInsertSqlWithoutId(),
+                getParams(object, classMetaData.getFieldsWithoutId()));
     }
 
     private List<Object> getParams(T object, List<Field> fields) {
@@ -57,7 +66,7 @@ public class JdbcMapperImpl<T> implements JdbcMapper<T> {
     }
 
     @Override
-    public long update(T objectData) {
+    public ID update(T objectData) {
         try {
             List<Object> params = getParams(objectData, classMetaData.getFieldsWithoutId());
             params.add(getParam(objectData, classMetaData.getIdField()));
@@ -68,8 +77,8 @@ public class JdbcMapperImpl<T> implements JdbcMapper<T> {
     }
 
     @Override
-    public long insertOrUpdate(T objectData) {
-        Object id = getParam(objectData, classMetaData.getIdField());
+    public ID insertOrUpdate(T objectData) {
+        ID id = (ID) getParam(objectData, classMetaData.getIdField());
         if (id != null) {
             Optional<T> optional = findById(id);
             if (optional.isPresent()) {
@@ -80,7 +89,7 @@ public class JdbcMapperImpl<T> implements JdbcMapper<T> {
     }
 
     @Override
-    public Optional<T> findById(Object id) {
+    public Optional<T> findById(ID id) {
         try {
             return dbExecutor.executeSelect(getConnection(), sqlMetaData.getSelectByIdSql(), id, this::handleSelect);
         } catch (SQLException throwables) {
@@ -140,5 +149,10 @@ public class JdbcMapperImpl<T> implements JdbcMapper<T> {
 
     private Connection getConnection() {
         return sessionManager.getCurrentSession().getConnection();
+    }
+
+    @Override
+    public SessionManager getSessionManager() {
+        return sessionManager;
     }
 }
