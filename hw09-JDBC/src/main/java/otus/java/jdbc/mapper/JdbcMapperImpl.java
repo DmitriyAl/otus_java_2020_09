@@ -113,13 +113,12 @@ public class JdbcMapperImpl<T, ID> implements JdbcMapper<T, ID> {
         T result = classMetaData.getConstructor().newInstance();
         List<Field> fields = classMetaData.getAllFields();
         for (int i = 0; i < fields.size(); i++) {
-            initializeField(result, fields.get(i), resultSet, i + 1);
+            initializeField(result, fields.get(i), resultSet.getObject(i + 1));
         }
         return result;
     }
 
-    private void initializeField(T result, Field field, ResultSet resultSet, int index) throws Exception {
-        Object value = resultSet.getObject(index);
+    private void initializeField(T result, Field field, Object value) throws Exception {
         field.setAccessible(true);
         field.set(result, value);
     }

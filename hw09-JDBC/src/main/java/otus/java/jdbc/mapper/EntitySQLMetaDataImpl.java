@@ -3,6 +3,7 @@ package otus.java.jdbc.mapper;
 import java.lang.reflect.Field;
 import java.util.Iterator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class EntitySQLMetaDataImpl implements EntitySQLMetaData {
     private final EntityClassMetaData<?> classMetadata;
@@ -14,19 +15,15 @@ public class EntitySQLMetaDataImpl implements EntitySQLMetaData {
     @Override
     public String getSelectAllSql() {
         StringBuilder sb = new StringBuilder("select ");
-        appendFields(sb, classMetadata.getAllFields());
+        sb.append(getFields(classMetadata.getAllFields()));
         sb.append(" from ");
         sb.append(classMetadata.getName().toLowerCase());
         return sb.toString();
     }
 
-    private void appendFields(StringBuilder sb, List<Field> fields) {
-        for (Iterator<Field> it = fields.iterator(); it.hasNext(); ) {
-            sb.append(it.next().getName().toLowerCase());
-            if (it.hasNext()) {
-                sb.append(", ");
-            }
-        }
+    private String getFields(List<Field> fields) {
+        return fields.stream().map(Field::getName).map(String::toLowerCase)
+                .collect(Collectors.joining(", "));
     }
 
     @Override
@@ -43,7 +40,7 @@ public class EntitySQLMetaDataImpl implements EntitySQLMetaData {
         StringBuilder sb = new StringBuilder("insert into ");
         sb.append(classMetadata.getName().toLowerCase());
         sb.append(" (");
-        appendFields(sb, classMetadata.getFieldsWithoutId());
+        sb.append(getFields(classMetadata.getFieldsWithoutId()));
         sb.append(") values(");
         appendParamsLine(sb, classMetadata.getFieldsWithoutId().size());
         sb.append(")");
@@ -55,7 +52,7 @@ public class EntitySQLMetaDataImpl implements EntitySQLMetaData {
         StringBuilder sb = new StringBuilder("insert into ");
         sb.append(classMetadata.getName().toLowerCase());
         sb.append(" (");
-        appendFields(sb, classMetadata.getAllFields());
+        sb.append(getFields(classMetadata.getAllFields()));
         sb.append(") values(");
         appendParamsLine(sb, classMetadata.getAllFields().size());
         sb.append(") on conflict (");

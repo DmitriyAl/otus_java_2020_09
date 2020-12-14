@@ -29,7 +29,7 @@ class DbServiceClientImplTest {
 
     @Test
     void insertClient() {
-        assertThat(serviceClient.getAll()).hasSize(0);
+        assertThat(serviceClient.getAll()).isEmpty();
         Client ben = new Client("Ben", 15);
         long benId = serviceClient.save(ben);
         assertThat(serviceClient.getAll()).hasSize(1).containsOnly(ben);
@@ -42,7 +42,7 @@ class DbServiceClientImplTest {
 
     @Test
     void updateClient() {
-        assertThat(serviceClient.getAll()).hasSize(0);
+        assertThat(serviceClient.getAll()).isEmpty();
         Client ben = new Client("Ben", 15);
         long benId = serviceClient.save(ben);
         assertThat(serviceClient.getAll()).hasSize(1).containsOnly(ben);

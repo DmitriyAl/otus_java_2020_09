@@ -30,8 +30,8 @@ public class DbServiceAccountImplTest {
     }
 
     @Test
-    void insertClient() {
-        assertThat(serviceAccount.getAll()).hasSize(0);
+    void insertAccount() {
+        assertThat(serviceAccount.getAll()).isEmpty();
         Account first = new Account(UUID.randomUUID(), "common", 1.2f);
         UUID firstId = serviceAccount.save(first);
         assertThat(serviceAccount.getAll()).hasSize(1).containsOnly(first);
@@ -43,8 +43,8 @@ public class DbServiceAccountImplTest {
     }
 
     @Test
-    void updateClient() {
-        assertThat(serviceAccount.getAll()).hasSize(0);
+    void updateAccount() {
+        assertThat(serviceAccount.getAll()).isEmpty();
         Account first = new Account(UUID.randomUUID(), "common", 1.2f);
         UUID firstId = serviceAccount.save(first);
         assertThat(serviceAccount.getAll()).hasSize(1).containsOnly(first);
