@@ -16,7 +16,7 @@ create table if not exists users
 
 create table if not exists phones
 (
-    id      bigserial not null,
+    id      uuid not null,
     number  varchar,
     user_id bigint,
     primary key (id),

@@ -10,7 +10,7 @@ public interface Dao<T, ID> {
 
     Optional<T> findById(ID id);
 
-    ID insertOrUpdate(T user);
+    ID insertOrUpdate(T entity);
 
     SessionManager getSessionManager();
 }

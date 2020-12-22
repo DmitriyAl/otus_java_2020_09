@@ -11,7 +11,7 @@ public class Address implements IntegerId<Long> {
     private Long id;
     @Column(name = "street")
     private String street;
-    @OneToOne(fetch = FetchType.LAZY, mappedBy = "address")
+    @OneToOne(mappedBy = "address", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private User user;
 
     public Address() {
@@ -36,6 +36,14 @@ public class Address implements IntegerId<Long> {
 
     public void setStreet(String street) {
         this.street = street;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     @Override

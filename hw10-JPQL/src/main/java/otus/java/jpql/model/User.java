@@ -15,7 +15,7 @@ public class User implements IntegerId<Long> {
     private String name;
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Address address;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Phone> phones = new ArrayList<>();
 
     public User() {

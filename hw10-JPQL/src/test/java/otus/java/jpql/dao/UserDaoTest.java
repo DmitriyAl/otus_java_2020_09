@@ -1,14 +1,12 @@
 package otus.java.jpql.dao;
 
 import org.hibernate.LazyInitializationException;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import otus.java.jpql.base.AbstractHibernateTest;
 import otus.java.jpql.model.Address;
 import otus.java.jpql.model.Phone;
 import otus.java.jpql.model.User;
-import otus.java.jpql.sessionmanager.SessionManagerHibernate;
 
 import java.util.Collections;
 import java.util.Optional;
@@ -18,13 +16,11 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 class UserDaoTest extends AbstractHibernateTest {
     private Dao<User, Long> userDao;
-    private SessionManagerHibernate sessionManager;
 
     @BeforeEach
     @Override
     public void setUp() {
         super.setUp();
-        sessionManager = new SessionManagerHibernate(sessionFactory);
         userDao = new UserDao(sessionManager);
     }
 
@@ -89,6 +85,7 @@ class UserDaoTest extends AbstractHibernateTest {
         sessionManager.commitSession();
 
         assertThat(optionalUser).isNotEmpty();
+        assertThatThrownBy(() -> optionalUser.get().getAddress().getStreet()).isInstanceOf(LazyInitializationException.class);
         assertThatThrownBy(() -> optionalUser.get().getPhones().size()).isInstanceOf(LazyInitializationException.class);
     }
 
@@ -111,6 +108,7 @@ class UserDaoTest extends AbstractHibernateTest {
         sessionManager.beginSession();
 
         assertThat(optionalUser).isNotEmpty();
+        assertThatThrownBy(() -> optionalUser.get().getAddress().getStreet()).isInstanceOf(LazyInitializationException.class);
         assertThatThrownBy(() -> optionalUser.get().getPhones().size()).isInstanceOf(LazyInitializationException.class);
         sessionManager.commitSession();
     }
@@ -130,12 +128,8 @@ class UserDaoTest extends AbstractHibernateTest {
         final Optional<User> optionalUser = userDao.findById(markId);
 
         assertThat(optionalUser).isNotEmpty();
+        assertThat(optionalUser.get().getAddress().getStreet()).isEqualTo(mark.getAddress().getStreet());
         assertThat(optionalUser.get().getPhones()).hasSize(2).containsOnly(phone1, phone2);
         sessionManager.commitSession();
-    }
-
-    @AfterEach
-    public void tearDown() {
-        super.tearDown();
     }
 }
