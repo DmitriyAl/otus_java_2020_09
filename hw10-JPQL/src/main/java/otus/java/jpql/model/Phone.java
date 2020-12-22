@@ -5,7 +5,7 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "phones")
-public class Phone {
+public class Phone implements IntegerId<Long> {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

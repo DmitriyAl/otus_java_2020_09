@@ -7,10 +7,10 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "users")
-public class User {
+public class User implements IntegerId<Long> {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private long id;
     @Column(name = "name")
     private String name;
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
@@ -25,11 +25,16 @@ public class User {
         this.name = name;
     }
 
+    public User(long id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
     public Long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 
