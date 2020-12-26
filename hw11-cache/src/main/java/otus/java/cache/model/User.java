@@ -1,5 +1,7 @@
 package otus.java.cache.model;
 
+import otus.java.cache.dto.UserDto;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -7,7 +9,7 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "users")
-public class User implements IntegerId<Long> {
+public class User implements IntegerId<Long>, HasDto<UserDto> {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -28,6 +30,10 @@ public class User implements IntegerId<Long> {
     public User(long id, String name) {
         this.id = id;
         this.name = name;
+    }
+
+    public UserDto toDto() {
+        return new UserDto(this);
     }
 
     public Long getId() {

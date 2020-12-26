@@ -23,8 +23,7 @@ class OldUserDaoTest extends AbstractHibernateTest {
     @Override
     public void setUp() {
         super.setUp();
-        Cache<Long, User> userCache = new MyWeakCache<>();
-        userDao = new UserDao(sessionManager, userCache);
+        userDao = new UserDao(sessionManager);
     }
 
     @Test

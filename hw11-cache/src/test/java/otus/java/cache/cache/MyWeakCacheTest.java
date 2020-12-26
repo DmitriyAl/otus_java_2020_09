@@ -22,7 +22,7 @@ class MyWeakCacheTest {
         final MyWeakCache<Long, String> cache = new MyWeakCache<>();
         cache.addListener(listener);
         cache.put(1L, "one");
-        verify(listener, times(1)).notify(1L, "one", CacheEvent.CREATED);
+        verify(listener, times(1)).notify(1L, "one", CacheEvent.ADDED);
     }
 
     @Test
@@ -33,7 +33,7 @@ class MyWeakCacheTest {
         System.gc();
         TimeUnit.MILLISECONDS.sleep(1);
         assertThat(cache.get(1L)).isNull();
-        verify(listener, times(1)).notify(1L, "one", CacheEvent.CREATED);
+        verify(listener, times(1)).notify(1L, "one", CacheEvent.ADDED);
     }
 
     @Test
@@ -44,8 +44,8 @@ class MyWeakCacheTest {
         System.gc();
         TimeUnit.MILLISECONDS.sleep(1);
         cache.put(1L, "new");
-        verify(listener, times(1)).notify(1L, "old", CacheEvent.CREATED);
-        verify(listener, times(1)).notify(1L, "new", CacheEvent.CREATED);
+        verify(listener, times(1)).notify(1L, "old", CacheEvent.ADDED);
+        verify(listener, times(1)).notify(1L, "new", CacheEvent.ADDED);
     }
 
     @Test

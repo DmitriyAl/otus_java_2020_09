@@ -1,11 +1,13 @@
 package otus.java.cache.model;
 
+import otus.java.cache.dto.AddressDto;
+
 import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
 @Table(name = "addresses")
-public class Address implements IntegerId<Long> {
+public class Address implements IntegerId<Long>, HasDto<AddressDto> {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -20,6 +22,10 @@ public class Address implements IntegerId<Long> {
     public Address(String street, User user) {
         this.street = street;
         this.user = user;
+    }
+
+    public AddressDto toDto() {
+        return new AddressDto(this);
     }
 
     public Long getId() {

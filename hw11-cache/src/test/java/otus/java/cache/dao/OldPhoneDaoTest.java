@@ -25,8 +25,7 @@ class OldPhoneDaoTest extends AbstractHibernateTest {
     @Override
     public void setUp() {
         super.setUp();
-        Cache<UUID, Phone> phoneCache = new MyWeakCache<>();
-        phoneDao = new PhoneDao(sessionManager, phoneCache);
+        phoneDao = new PhoneDao(sessionManager);
     }
 
     @Test

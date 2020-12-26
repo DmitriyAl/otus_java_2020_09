@@ -21,8 +21,7 @@ class OldAddressDaoTest extends AbstractHibernateTest {
     @Override
     public void setUp() {
         super.setUp();
-        Cache<Long, Address> addressCache = new MyWeakCache<>();
-        addressDao = new AddressDao(sessionManager, addressCache);
+        addressDao = new AddressDao(sessionManager);
     }
 
     @Test

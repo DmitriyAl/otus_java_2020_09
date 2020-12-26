@@ -1,19 +1,30 @@
 package otus.java.cache.cache;
 
-import otus.java.cache.model.Phone;
-import otus.java.cache.model.User;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import otus.java.cache.dto.PhoneDto;
+import otus.java.cache.dto.UserDto;
 
 import java.util.UUID;
 
-public class PhoneCacheListener implements CacheListener<UUID, Phone> {
-    private final Cache<Long, User> userCache;
+public class PhoneCacheListener implements CacheListener<UUID, PhoneDto> {
+    private final Cache<Long, UserDto> userCache;
 
-    public PhoneCacheListener(Cache<Long, User> userCache) {
+    private static final Logger logger = LoggerFactory.getLogger(PhoneCacheListener.class);
+
+    public PhoneCacheListener(Cache<Long, UserDto> userCache) {
         this.userCache = userCache;
     }
 
     @Override
-    public void notify(UUID key, Phone phone, CacheEvent event) {
-        userCache.remove(phone.getUser().getId());
+    public void notify(UUID key, PhoneDto phone, CacheEvent event) {
+        switch (event) {
+            case ADDED -> logger.info("Phone with id {} was added to the cache", phone.getId());
+            case RECEIVED -> logger.info("Phone with id {} was received from the cache", phone.getId());
+            case REMOVED-> {
+                logger.info("Phone with id {} was removed from the cache", phone.getId());
+                userCache.remove(phone.getUserId());
+            }
+        }
     }
 }

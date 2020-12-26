@@ -1,6 +1,7 @@
 package otus.java.cache.model;
 
 import org.hibernate.annotations.GenericGenerator;
+import otus.java.cache.dto.PhoneDto;
 
 import javax.persistence.*;
 import java.util.Objects;
@@ -8,7 +9,7 @@ import java.util.UUID;
 
 @Entity
 @Table(name = "phones")
-public class Phone {
+public class Phone implements HasDto<PhoneDto> {
     @Id
     @GeneratedValue(generator = "UUID")
     @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
@@ -24,6 +25,10 @@ public class Phone {
     public Phone(String number, User user) {
         this.number = number;
         this.user = user;
+    }
+
+    public PhoneDto toDto() {
+        return new PhoneDto(this);
     }
 
     public UUID getId() {

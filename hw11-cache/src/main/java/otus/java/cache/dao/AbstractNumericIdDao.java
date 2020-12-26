@@ -1,7 +1,6 @@
 package otus.java.cache.dao;
 
 import org.hibernate.Session;
-import otus.java.cache.cache.Cache;
 import otus.java.cache.exception.ClientDaoException;
 import otus.java.cache.model.IntegerId;
 import otus.java.cache.sessionmanager.DatabaseSessionHibernate;
@@ -11,10 +10,6 @@ public abstract class AbstractNumericIdDao<T extends IntegerId<ID>, ID extends L
 
     public AbstractNumericIdDao(SessionManagerHibernate sessionManager, Class<T> clazz) {
         super(sessionManager, clazz);
-    }
-
-    public AbstractNumericIdDao(SessionManagerHibernate sessionManager, Cache<ID, T> cache, Class<T> clazz) {
-        super(sessionManager, cache, clazz);
     }
 
     @Override
@@ -28,7 +23,6 @@ public abstract class AbstractNumericIdDao<T extends IntegerId<ID>, ID extends L
                 hibernateSession.persist(entity);
                 hibernateSession.flush();
             }
-            removeFromCache(entity.getId());
             return entity.getId();
         } catch (Exception e) {
             throw new ClientDaoException(e);

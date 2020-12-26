@@ -11,14 +11,8 @@ public class MyWeakCache<K, V> implements Cache<K, V> {
 
     @Override
     public void put(K key, V value) {
-        CacheEvent event;
-        if (!cache.containsKey(key.toString())) {
-            event = CacheEvent.CREATED;
-        } else {
-            event = CacheEvent.UPDATED;
-        }
         cache.put(key.toString(), value);
-        listeners.forEach(l-> l.notify(key, value, event));
+        listeners.forEach(l -> l.notify(key, value, CacheEvent.ADDED));
     }
 
     @Override
@@ -31,7 +25,11 @@ public class MyWeakCache<K, V> implements Cache<K, V> {
 
     @Override
     public V get(K key) {
-        return cache.get(key.toString());
+        final V received = cache.get(key.toString());
+        if (received != null) {
+            listeners.forEach(l -> l.notify(key, received, CacheEvent.RECEIVED));
+        }
+        return received;
     }
 
     @Override

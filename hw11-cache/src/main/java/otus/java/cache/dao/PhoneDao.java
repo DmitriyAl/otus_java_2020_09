@@ -14,10 +14,6 @@ public class PhoneDao extends AbstractDao<Phone, UUID> {
         super(sessionManager, Phone.class);
     }
 
-    public PhoneDao(SessionManagerHibernate sessionManager, Cache<UUID, Phone> cache) {
-        super(sessionManager, cache, Phone.class);
-    }
-
     @Override
     public UUID insertOrUpdate(Phone entity) {
         DatabaseSessionHibernate currentSession = sessionManager.getCurrentSession();
@@ -29,7 +25,6 @@ public class PhoneDao extends AbstractDao<Phone, UUID> {
                 hibernateSession.persist(entity);
                 hibernateSession.flush();
             }
-            removeFromCache(entity.getId());
             return entity.getId();
         } catch (Exception e) {
             throw new ClientDaoException(e);

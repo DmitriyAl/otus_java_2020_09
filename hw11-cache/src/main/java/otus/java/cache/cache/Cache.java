@@ -1,7 +1,5 @@
 package otus.java.cache.cache;
 
-import otus.java.cache.model.Replicable;
-
 public interface Cache<K, V> {
 
     void put(K key, V value);
