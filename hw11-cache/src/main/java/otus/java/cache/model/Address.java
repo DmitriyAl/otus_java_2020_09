@@ -13,7 +13,7 @@ public class Address implements IntegerId<Long>, HasDto<AddressDto> {
     private Long id;
     @Column(name = "street")
     private String street;
-    @OneToOne(mappedBy = "address", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "address", fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private User user;
 
     public Address() {
