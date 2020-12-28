@@ -70,8 +70,8 @@ public class Scenarios extends AbstractHibernateTest {
     public void checkCacheWithPartialUpdate() {
         createTestData();
         checkIfEverythingIsCreated();
-        long nonCachedServiceTime = getUpdatedGetEverythingTime(userService, phoneService, addressService);
-        long cachedServiceTime = getUpdatedGetEverythingTime(cachedUserService, cachedPhoneService, cachedAddressService);
+        long nonCachedServiceTime = getUpdatedGetEverythingTime(userService, phoneService, addressService, 0);
+        long cachedServiceTime = getUpdatedGetEverythingTime(cachedUserService, cachedPhoneService, cachedAddressService, 1);
         checkIfResultDataCorrect("Carl", "+7999", "New street");
         displayTimes(nonCachedServiceTime, cachedServiceTime);
     }
@@ -119,13 +119,14 @@ public class Scenarios extends AbstractHibernateTest {
 
     private long getUpdatedGetEverythingTime(DbService<UserDto, User, Long> userService,
                                              DbService<PhoneDto, Phone, UUID> phoneService,
-                                             DbService<AddressDto, Address, Long> addressService) {
+                                             DbService<AddressDto, Address, Long> addressService,
+                                             int remainder) {
         long startTime = Calendar.getInstance().getTimeInMillis();
         for (int i = 0; i < 10; i++) {
             for (int j = 1; j <= 10; j++) {
                 UserDto userDto = userService.getById((long) j);
-                if (i % 2 == 0) {
-                    updateUser(i, userDto);
+                if (i % 2 == remainder) {
+                    updateUser(i, userDto, userService);
                     userDto = userService.getById(userDto.getId());
                 }
                 for (PhoneDto phone : userDto.getPhones()) {
@@ -138,7 +139,7 @@ public class Scenarios extends AbstractHibernateTest {
         return finishTime - startTime;
     }
 
-    private void updateUser(int i, UserDto userDto) {
+    private void updateUser(int i, UserDto userDto, DbService<UserDto, User, Long> userService) {
         User user = new User();
         user.setId(userDto.getId());
         user.setName("Carl" + i);
