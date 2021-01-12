@@ -1,0 +1,55 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Users</title>
+</head>
+
+<body>
+<h4>Create a new user</h4>
+<form action="users" method="post">
+    <label for="login">login</label>
+    <br/>
+    <input id="login" type="text" name="login" placeholder="New user login">
+    <br/>
+    <label for="password">password</label>
+    <br/>
+    <input id="password" type="password" name="password" placeholder="New user password">
+    <br/>
+    <label for="name">name</label>
+    <br/>
+    <input id="name" type="text" name="name" placeholder="New user name">
+    <br/>
+    <br/>
+    <input type="submit" value="Add new user">
+</form>
+
+<h4>Find user by id</h4>
+<input type="text" id="userIdTextBox" value="3" placeholder="Type user id">
+<button onclick="getUserById()">Find</button>
+<pre id="userDataContainer"></pre>
+
+<h4>Users list</h4>
+<table style="width: 400px">
+    <thead>
+    <tr>
+        <td style="width: 50px">Id</td>
+        <td style="width: 150px">Имя</td>
+        <td style="width: 100px">Логин</td>
+        <td style="width: 100px">Пароль</td>
+    </tr>
+    </thead>
+    <tbody>
+    <#list users as user>
+    <tr>
+        <td>${user.id}</td>
+        <td>${user.name}</td>
+        <td>${user.login}</td>
+        <td>${user.password}</td>
+    </tr>
+    <#else>
+    No users are available
+    </#list>
+    </tbody>
+</table>
+</body>
+<script src="js/users.js"></script>
+</html>
