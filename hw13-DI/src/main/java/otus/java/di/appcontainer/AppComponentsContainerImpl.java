@@ -6,6 +6,7 @@ import otus.java.di.appcontainer.api.AppComponentsContainerConfig;
 import otus.java.di.config.ParsedConfiguration;
 import otus.java.di.exception.BeanInitializationException;
 
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -77,15 +78,18 @@ public class AppComponentsContainerImpl implements AppComponentsContainer {
         }
     }
 
-    private void initializeBean(Method beanMethod, Object instance, Object[] parameters) {
+    private Object getConfigClassInstance(Class<?> clazz) {
+        for (Object configClassesInstance : configClassesInstances) {
+            if (configClassesInstance.getClass().isAssignableFrom(clazz)) {
+                return configClassesInstance;
+            }
+        }
         try {
-            final Object bean = beanMethod.invoke(instance, parameters);
-            appComponents.add(bean);
-
-            String beanName = beanMethod.getAnnotation(AppComponent.class).name();
-            appComponentsByName.put(beanName, bean);
+            final Object instance = clazz.getConstructor().newInstance();
+            configClassesInstances.add(instance);
+            return instance;
         } catch (Exception e) {
-            throw new BeanInitializationException("Can not initialize bean", e);
+            throw new BeanInitializationException("Can not receive config class instance", e);
         }
     }
 
@@ -105,19 +109,26 @@ public class AppComponentsContainerImpl implements AppComponentsContainer {
         return parameters.toArray();
     }
 
-    private Object getConfigClassInstance(Class<?> clazz) {
-        for (Object configClassesInstance : configClassesInstances) {
-            if (configClassesInstance.getClass().isAssignableFrom(clazz)) {
-                return configClassesInstance;
-            }
-        }
+    private void initializeBean(Method beanMethod, Object instance, Object[] parameters) {
         try {
-            final Object instance = clazz.getConstructor().newInstance();
-            configClassesInstances.add(instance);
-            return instance;
+            String beanName = beanMethod.getAnnotation(AppComponent.class).name();
+            checkDuplicates(beanName);
+            addBeanToStorage(beanMethod, instance, parameters, beanName);
         } catch (Exception e) {
-            throw new BeanInitializationException("Can not receive config class instance", e);
+            throw new BeanInitializationException("Can not initialize bean", e);
         }
+    }
+
+    private void checkDuplicates(String beanName) {
+        if (appComponentsByName.containsKey(beanName)) {
+            throw new BeanInitializationException(String.format("Bean '%s' is duplicated", beanName));
+        }
+    }
+
+    private void addBeanToStorage(Method beanMethod, Object instance, Object[] parameters, String beanName) throws IllegalAccessException, InvocationTargetException {
+        final Object bean = beanMethod.invoke(instance, parameters);
+        appComponents.add(bean);
+        appComponentsByName.put(beanName, bean);
     }
 
     @Override
