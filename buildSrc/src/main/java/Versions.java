@@ -6,4 +6,5 @@ public interface Versions {
     String postgresql = "42.2.5";
     String jetty = "11.0.0";
     String freemarker = "2.3.30";
+    String reflections = "0.9.12";
 }
