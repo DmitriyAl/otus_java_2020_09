@@ -4,6 +4,7 @@
 
 <hibernate-configuration>
   <session-factory>
+    <property name="connection.driver_class">org.postgresql.Driver</property>
     <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQL10Dialect</property>
     <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/db</property>
     <property name="hibernate.connection.username">postgres</property>

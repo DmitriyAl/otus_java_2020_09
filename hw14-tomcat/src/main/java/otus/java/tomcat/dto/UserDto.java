@@ -18,8 +18,8 @@ public class UserDto {
     public UserDto(User dao) {
         this.id = dao.getId();
         this.name = dao.getName();
-        this.address = dao.getAddress().toDto();
-        this.phones = dao.getPhones().stream().map(Phone::toDto).collect(Collectors.toList());
+        this.address = dao.getAddress() == null ? null : dao.getAddress().toDto();
+        this.phones = dao.getPhones() == null ? null : dao.getPhones().stream().map(Phone::toDto).collect(Collectors.toList());
     }
 
     public static UserDto toDto(User dao) {

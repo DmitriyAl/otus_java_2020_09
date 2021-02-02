@@ -1,6 +1,7 @@
 package otus.java.tomcat.dao;
 
 import org.hibernate.Session;
+import org.springframework.stereotype.Repository;
 import otus.java.tomcat.exception.ClientDaoException;
 import otus.java.tomcat.model.Phone;
 import otus.java.tomcat.sessionmanager.DatabaseSessionHibernate;
@@ -8,6 +9,7 @@ import otus.java.tomcat.sessionmanager.SessionManagerHibernate;
 
 import java.util.UUID;
 
+@Repository
 public class PhoneDao extends AbstractDao<Phone, UUID> {
     public PhoneDao(SessionManagerHibernate sessionManager) {
         super(sessionManager, Phone.class);
