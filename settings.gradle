@@ -20,5 +20,6 @@ include 'hw09-JDBC'
 include 'hw10-JPQL'
 include 'hw11-cache'
 include 'hw12-servlets'
+include 'hw13-DI'
 include 'hw14-tomcat'
 
