@@ -2,11 +2,12 @@ package otus.java.messages.dto;
 
 import otus.java.messages.model.Phone;
 import otus.java.messages.model.User;
+import ru.otus.messagesystem.client.ResultDataType;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class UserDto {
+public class UserDto extends ResultDataType {
     private long id;
     private String name;
     private AddressDto address;

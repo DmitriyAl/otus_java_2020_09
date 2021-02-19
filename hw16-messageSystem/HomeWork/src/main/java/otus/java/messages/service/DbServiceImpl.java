@@ -17,11 +17,6 @@ public class DbServiceImpl<DTO, ENTITY extends HasDto<DTO>, ID> implements DbSer
     private final Cache<ID, DTO> cache;
     private static final Logger logger = LoggerFactory.getLogger(DbServiceImpl.class);
 
-    public DbServiceImpl(Dao<ENTITY, ID> dao) {
-        this.dao = dao;
-        this.cache = null;
-    }
-
     public DbServiceImpl(Dao<ENTITY, ID> dao, Cache<ID, DTO> cache) {
         this.dao = dao;
         this.cache = cache;

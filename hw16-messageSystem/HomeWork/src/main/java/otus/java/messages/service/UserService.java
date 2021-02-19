@@ -11,6 +11,8 @@ import java.util.Random;
 
 @Service
 public class UserService extends DbServiceImpl<UserDto, User, Long> {
+    public static final String SERVICE_NAME = "databaseService";
+
     public UserService(Dao<User, Long> dao, Cache<Long, UserDto> cache) {
         super(dao, cache);
     }
