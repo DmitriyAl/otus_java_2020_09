@@ -23,4 +23,6 @@ include 'hw12-servlets'
 include 'hw13-DI'
 include 'hw14-tomcat'
 include 'hw15-sequence'
+include 'hw16-messageSystem:MessageSystem'
+include 'hw16-messageSystem:HomeWork'
 
