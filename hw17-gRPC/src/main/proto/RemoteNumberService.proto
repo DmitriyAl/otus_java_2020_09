@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package ru.otus.protobuf.generated;
+
+option java_multiple_files = true;
+
+message RequestedRange {
+  int32 min = 1;
+  int32 max = 2;
+}
+
+message ResponseNumber {
+  int32 value = 1;
+}
+
+service RemoteNumberService {
+  rpc getNumber(RequestedRange) returns (stream ResponseNumber);
+}
