@@ -37,3 +37,8 @@ out
 *.idea
 
 generated
+
+node_modules
+package-lock.json
+
+generated

@@ -1,0 +1,15 @@
+package otus.java.project.controller;
+
+import otus.java.project.exception.CoreException;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+
+@ControllerAdvice
+public class ExceptionHandlerAdvice {
+    @ExceptionHandler(CoreException.class)
+    public ResponseEntity<String> coreExceptionHandler(CoreException ex) {
+        return ResponseEntity.status(HttpStatus.CONFLICT).body(ex.getLocalizedMessage());
+    }
+}
