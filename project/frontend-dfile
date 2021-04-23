@@ -1,0 +1,16 @@
+FROM node:14.7.0 AS build
+
+ENV PROJECT_DIR=/opt/react
+WORKDIR $PROJECT_DIR
+
+ADD ./frontend/package.json $PROJECT_DIR
+ADD ./frontend/src $PROJECT_DIR/src
+ADD ./frontend/public $PROJECT_DIR/public
+ADD ./frontend/nginx.conf $PROJECT_DIR
+
+RUN npm install
+RUN npm run-script build
+
+FROM nginx:1.19.1-alpine
+COPY --from=build /opt/react/build /usr/share/nginx/html
+COPY --from=build /opt/react/nginx.conf /etc/nginx/conf.d/default.conf
