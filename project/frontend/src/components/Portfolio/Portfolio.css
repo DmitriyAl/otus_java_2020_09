@@ -1,0 +1,9 @@
+.Portfolio {}
+
+.tools {
+    display: inline-flex;
+}
+
+.table-selector{
+    min-width: 10rem;
+}
